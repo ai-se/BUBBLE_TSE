@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{BUBBLE}\PYG{p}{(}\PYG{n}{data}\PYG{p}{):}
+  \PYG{n}{project\PYGZus{}features} \PYG{o}{=} \PYG{n}{get\PYGZus{}features}\PYG{p}{(}\PYG{n}{data}\PYG{p}{)}
+  \PYG{n}{cluster\PYGZus{}tree} \PYG{o}{=} \PYG{n}{BIRCH}\PYG{p}{(}\PYG{n}{project\PYGZus{}features}\PYG{p}{)}
+  \PYG{n}{bellwethers} \PYG{o}{=} \PYG{n}{h\PYGZus{}bellwether}\PYG{p}{(}\PYG{n}{cluster\PYGZus{}tree}\PYG{p}{)}
+  \PYG{k}{for} \PYG{n}{project} \PYG{o+ow}{in} \PYG{n}{test\PYGZus{}1}\PYG{p}{:}
+    \PYG{n}{train\PYGZus{}2}\PYG{p}{,} \PYG{n}{test\PYGZus{}2} \PYG{o}{=} \PYG{n}{tt\PYGZus{}split}\PYG{p}{(}\PYG{n}{data}\PYG{p}{[}\PYG{n}{project}\PYG{p}{])}
+    \PYG{n}{self\PYGZus{}clf} \PYG{o}{=} \PYG{n}{LR}\PYG{p}{(}\PYG{n}{train\PYGZus{}2}\PYG{p}{)}
+    \PYG{n}{b\PYGZus{}clf} \PYG{o}{=} \PYG{n}{find\PYGZus{}bellw}\PYG{p}{(}\PYG{n}{project\PYGZus{}features}\PYG{p}{[}\PYG{n}{project}\PYG{p}{])}
+    \PYG{n}{self\PYGZus{}score} \PYG{o}{=} \PYG{n}{self\PYGZus{}clf}\PYG{o}{.}\PYG{n}{predict}\PYG{p}{(}\PYG{n}{test\PYGZus{}2}\PYG{p}{)}
+    \PYG{n}{bellwether\PYGZus{}score} \PYG{o}{=} \PYG{n}{b\PYGZus{}clf}\PYG{o}{.}\PYG{n}{predict}\PYG{p}{(}\PYG{n}{test\PYGZus{}2}\PYG{p}{)}
+    \PYG{n}{results} \PYG{o}{+=} \PYG{p}{[}\PYG{n}{self\PYGZus{}score}\PYG{p}{,} \PYG{n}{bellwether\PYGZus{}score}\PYG{p}{]}
+  \PYG{k}{return} \PYG{n}{results}
+\end{Verbatim}
