@@ -1,0 +1,47 @@
+\renewcommand\thesubfigure{\alph{subfigure}}
+\begin{figure*}[ht!]
+\centering
+\begin{minipage}{.45\linewidth}
+\centering
+\resizebox{0.925\linewidth}{!}{
+\begin{subfigure}[t]{\linewidth}
+\inputminted[numbersep=5pt, linenos=true, fontsize=\small]{c}{pseudocode/overall.py}
+
+\caption{The overall framework of \tool}
+\label{fig:general_framework}    
+\end{subfigure}}\\[0.3em]
+\resizebox{0.925\linewidth}{!}{
+\begin{subfigure}[t]{\linewidth}
+\inputminted[numbersep=5pt, linenos=true, fontsize=\small]{python}{pseudocode/get_cov.py}
+
+\caption{Method to obtain edge coverage}
+\label{fig:coverage}    
+\end{subfigure}}%~
+\end{minipage}\hspace{0.1em}%
+\begin{minipage}{.5\linewidth}
+\centering
+\resizebox{0.925\linewidth}{!}{
+\begin{subfigure}{\linewidth}
+\inputminted[numbersep=5pt, linenos=true, fontsize=\small]{python}{pseudocode/seed_select.py}
+\vspace{-2em}
+\caption{Method to perform seed selection with importance sampling.}
+\label{fig:seed_selection}    
+\end{subfigure}}\\[-0.2em]
+\resizebox{0.925\linewidth}{!}{
+\begin{subfigure}{\linewidth}
+\inputminted[numbersep=5pt, linenos=true, fontsize=\small]{python}{pseudocode/train_adaptive.py}
+\vspace{-2em}
+\caption{Method to compute adaptive loss for training neural network.}
+\label{fig:train_adaptive}    
+\end{subfigure}}\\[-0.2em]
+\resizebox{0.925\linewidth}{!}{        
+\begin{subfigure}{\linewidth}
+\inputminted[numbersep=5pt, linenos=true, fontsize=\small]{python}{pseudocode/mutate.py}
+\vspace{-2em}
+\caption{Method to generate new inputs with gradient ascent.}
+\label{fig:mutation}    
+\end{subfigure}}
+\end{minipage}\\[0.3em]
+\caption{{\small Pseudocode of \tool.}}
+\label{fig:pseudo}
+\end{figure*}
