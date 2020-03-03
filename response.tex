@@ -11,28 +11,320 @@
 
 \review{I would like to thank the authors for submitting their work to TSE. While all the reviewers agree that the problem addressed is important and the paper has potential, the reviewers also identified several concerns that need to be carefully addressed. The reviewers also agreed that the amount of work needed to address those concerns is beyond a major revision. Thus, after carefully checking the reviewers and in accordance with reviewer’s recommendations, I also recommend “Revise and resubmit as New”.}
 
-Thank you very much for your encouraging comments. We have made appropriate changes to the manuscript taking into careful consideration the recommendations of the reviewers. We hope that this new draft adequately satisfies all the issues raised by the reviewers. To assist the reviewers in tracking all the new changes, where appropriate, we have prefixed the text with \respto{X-XX} to correspond to the reviewers' questions.
-
+\response{ Thank you very much for your encouraging comments. We have made appropriate changes to the manuscript taking into careful consideration the recommendations of the reviewers. We hope that this new draft adequately satisfies all the issues raised by the reviewers. To assist the reviewers in tracking all the new changes, where appropriate, we have prefixed the text with \respto{X-XX} to correspond to the reviewers' questions.~\\
 Below is the brief summary of our changes:
 \be
-\item The problem statement needs to be clarified and properly positioned (R1, R3). XXX
-
-\item The novelty of the approach needs to be clarified (R3). XXX (see \bareresp{2-1})
-
-\item The writing needs to be improved (R1, R2, R3).
-
-\item The study needs to include all the details to ensure replicability (R1, R2).
-
+\item The problem statement has been  clarified and properly positioned (R1, R3). XXX
+\item The novelty of the approach has  been clarified (R3). XXX (see \bareresp{2-1})
+\item Using comments from  (R1, R2, R3), we have made numerous small editorial improvements.
+\item The study now includes all the details to ensure replicability (R1, R2).
 \item The results of the study need to be revisited since the reviewers are not convinced that the results support the claims in the paper (R1, R2, R3).
-
-\item The background on transfer learning needs citations (R2).
-\ee
+\item The background on transfer learning has been augmented with more  citations (R2).
+\ee}
 
 
 \section*{Reviewer 1}
 
-Thank you very much for your detailed review. We have made some additional corrections, clarifications, and revisions, as directed by your comments. To assist in your review, we refer to specific locations of each of the changes using \respto{1-XX}.
+\response{Thank you very much for your detailed review. We have made some additional corrections, clarifications, and revisions, as directed by your comments. To assist in your review, we refer to specific locations of each of the changes using \respto{1-XX}.}
 
-\review{(1.1) 1. Background. The paper builds upon a number of previous studies. However, several key questions have no answer: *What is* the bellwhether? *Why is* this relevant? How does it work when applied to different contexts? Why is this useful in practice? None of these questions are addressed in the paper. This submission should be self-contained and allow a reader to understand its content without reading 10 other papers; in this sense, the submission fails completely. For example, the paper mentions that: "The core intuition of this new approach is that if many projects are similar, then we do not need to run comparisons between all pairs of projects": very good, but where this intuition come from?}
+\review{(1.1) Background. The paper builds upon a number of previous studies. However, several key questions have no answer: *What is* the bellwether? *Why is* this relevant? How does it work when applied to different contexts? Why is this useful in practice?}
+
+\response{You are quite correct, we did not define bellwether till very late in the prior draft. In this draft, we define bellwether on page 1.
+}
+
+\review{The paper mentions that: "The core intuition of this new approach is that if many projects are similar, then we do not need to run comparisons between all pairs of projects": very good, but where this intuition come from?}
 
 
+\response{Thank you for that comment.  You a re quite correct-- we did not document the source of our intutuion. We have added the following note to \respto{1-XX}}
+
+\begin{quote}
+\response{``The core intuition of this new approach is two-fold. Firstly,
+many projects are similar in structure. We say this since  Devanbu
+et al.`\cite{hindle2012naturalness}   report that if Markov chains are created for tokens in a program,
+then a remarkably small number of chains capture most of the program. ~\\
+``Secondly, given these similarities,   we can exploit symmetries between different projects in order to learn predictors from one and apply those to another. To say that anothe way, given large scale similarities between projects,  then we do not need to run comparisons between all pairs of projects since analyszing just a few pairs should work as well as anything else.''}
+\end{quote}
+ 
+
+\review{(1.2)The relevance of the paper. This is, unfortunately, unclear. According to the abstract and introduction, the main issue treated in the paper is related to scalability. Please, provide a clear case study on the performance of bellwether methods. The claims on the scalability of the approaches are just claims, no details are reported. Abstract and introduction just report that "when applied to the 697 projects studied here, they took 60 days of CPU to find and certify the bellwether". As said, the bellwether approach has been applied to several problems (e.g., defect prediction/effort estimation/bad smell detection): are these problems the same? When is it needed to apply scalable solutions for bellwether approaches? Why? Please, explain.}
+
+\response{ need a new RQ0: how slow is standard bellwether. theoretically an empriically its slow (chart on p2. move to RQ0). May need to include results using increasing community size.}
+
+\review{(1.3) Writing style. The introduction is, simply, to be completely rewritten. I would like to see a paper that is understandable even from non-experts. As such, please define the context of the paper, the concepts of (1) software quality - line 1, (2) general models - line 2, (3) many projects - line 2, (4) "scalable approach to learning effective models adapted to the task at hand" - line 2/3, (5) "or does the truth lie somewhere in-between" - line 3. These are just of the examples of why the introduction is unclear and does not provide any detail on the reasons behind the paper. The same is true for the remaining of the paper, which gives for granted many of the concepts without explaining them properly.}
+
+
+\response{ frist 3 oaras deled tup to :"funding general lessons"}
+
+\review{(1.4) Please, avoid claims such as "have tremendous practical significance" without providing any practical significant example/citation. (This is just an example)}
+
+\response{ you are right. sueprlatives deleted (including that one)"}
+
+
+\review{(1.5a) The clarity and replicability of the paper are unclear. Here some examples 1) "The logistic regression learner (since it is relatively fast)". What does "fast" mean? How was "fast" computed? }
+
+\response{ you are right. sueprlatives deleted (including that one)"}
+
+
+\review{(1.5b)
+2) "The SMOTE class imbalance correction algorithm [49], which we run on the training data2". Why is SMOTE needed? Why is the problem unbalanced? Please, explain.
+}
+
+\review{(1.5c)
+3) "and Hall’s CFS feature selector". Which features have been removed and why?
+}
+
+\review{(1.5d)
+4) "As to CFS, we found that without it, our recalls were very low and we could not identify which metrics mattered the most". Where can the reader understand this statement? Where is the replication data? }
+
+\response{how should I answer Where can the reader understand this statement? May need to remove this section as i don't have the results}
+
+
+\review{(1.5e)
+5) "extensive studies have found that CFS more useful than many other feature subset selection methods such as PCA or InfoGain or RELIEF". The paper cites just one paper, how should these studies be "extensive"? }
+
+\response{Thank you for that comment.  You are quite correct-- we did not document the all the necessary citations for supporting our claim before. We have added the following note to \respto{1-5e}}
+
+\review{(1.5f)
+5) "Maximize recall and precision and popt(20)": Why should these metrics be maximized? What is the practical value, e.g., is high recall always needed in practice, or should we prefer precision in the problems treated by the bellwether? What about popt(20)?}
+
+\response{added footnote also there are details in sec 4.5}
+
+
+\review{(1.5g) "While minimizing false alarms and ifa auc": Again, please explain the practical relevance of the performance metrics employed. }
+
+\response{added footnote also there are details in sec 4.5}
+
+
+\review{(1.5h) 
+More in general, how can one replicate the performed study? Is there a replication package? If so, where?}
+
+\response{Thank you for that comment. You are quite correct-- we did not include in depth steps to replicate the study before. We have added a replication package in contribution section \respto{1-5h} as well as more in depth details about the algorithm has been added in \respto{XXXX}}
+
+\review{(1.6a) The analysis of the results should be substantially improved. Let consider the case of Section 5 - RQ1. The results are reported in less than half column and refer to a figure (Figure 6) which does not explain anything. The summary reports that "Theoretically and empirically, the hierarchical reasoning on GENERAL performs much faster than standard bellwether methods": I cannot understand where these "theoretically and empirically" come from, since there is no proof of them. }
+
+\response{you are wright, need an RQ0}
+
+\review{(1.6b)
+The same is true for the other research questions. And, in general, there is qualitative analysis: Why are the results the ones reported in the paper? }
+
+\response{you are right,Thank you for that comments. We have added much  quantaitive analusis as
+well as statistical tests to this paper. Please see \fig{XXX7}.}
+
+\review{(1.6c) What makes the reported method scalable?}
+
+RQ0: how slow old better
+
+RQ1: how fast new bellweather.
+
+RQ2: scalabulity (the old RQ1)
+
+RQ3: (as before)
+
+RQ4: (as belfire)
+
+
+
+\section*{Reviewer 2squeue}
+
+Many of your comeents take issue with two terms used in this paper "lessons learned" and "trasfer learning".
+We agree with you that our use of "lessons learned" was inappropriate and we have removed all those usages.
+
+As to oir use of "transfer learning", 
+inspired by your commetns we have ckarified what we mean by that term much earlier in the paper (see \cite{XXX}). Base don that clarification, we can show that our use of ``transfer learning'' is consistent with its usage by Pan'09 (a paper current 8,220 citations at the time of this writing). Also, our usage is consistent with dozens of recent SE research papers on transfer learning~\cite{XXXmanycite}. Thank you for enocuraging us to clarify that terminology.
+
+A survey on transfer learning
+SJ Pan, Q Yang - IEEE Transactions on knowledge and data …, 2009 - ieeexplore.ieee.org
+  Cited by 8220 Related articles All 20 versions Web of Science: 3428
+  
+
+
+% \review{(2.1) [Sec. 1 and throughout] The paper repeatedly refers to a method for “transferring lessons learned from one project to another.” But the method does NOT transfer lessons learned. Lessons learned are identified throughout and formally documented in the project closing process.}
+
+% \response{ u r right. lessons learned are what yu said. what we do pass pom
+% defect predictors from one project to another (and this passage process of data mining results is very different to the lessons learned process you describe).   }
+
+% \review{These lessons learned are reviewed when new projects are being initiated/planned. The introduction talks about guiding project management but project management has a process for handling lessons learned that doesn’t require machine learning. How does the method help that process? Why would you need a “bellwether” to apply lessons learned to a new project?! The method does not transfer lessons learned but what it DOES appear to do is associate defect rate profiles for two projects (a so-called “bellwether” and a new project).}
+
+
+% \response{ ur rught we renamed as you said. }
+
+\review{(2.2) [Sec. 1] “…the bellwether is equivalent to the other models…” This claim is confusing. 1) Is “the bellwether” a model or a project? 2) How is equivalence defined? Or do you simply mean “similar”?}
+
+\response{ acts as data poasss on. cjanged to similiar.}
+
+\review{(2.3) [Sec. 1] “when new projects appear, their quality can be evaluated even before there is an extensive experience base within that particular project (again, just by studying the bellwether).” You take a set of projects…select one project (the “bellwether”)…then use that project to build a model that can—for instance—estimate defect rate. So, for the defect estimation case, the model learned from the bellwether won’t tell you where the defects may be (i.e., fault localization), it will just estimate how buggy a new project is. Is all of this right?}
+
+\response{ XX.}
+
+
+
+\review{(2.4) If the point is to use the bellwether to infer things about a “new” project, then how new can the new project be? When (in the new project’s history) can you be sure the model from the bellwether is valid to use?}
+
+\response{Explain the train, test splits and the how you do the exp. then say this is what our model proves, it predicts for projects which it has not seen before XX.}
+
+\review{(2.5) Do you have to find a bellwether for each purpose? In other words, if you find a bellwether among 697 projects for defect rate prediction, then is that same bellwether automatically used to build a model for another discrete task (different than defect rate prediction)? Or will you have to apply this algorithm for each and every discrete task?}
+
+\response{ clairft}
+
+\review{(2.6) Figure 1 needs to be omitted}
+
+\response{ ciuretainly too confusing for intro. can move to a later section and ducssed in more retchnical detail}
+
+\review{(2.7) The computational complexity $(O(N^2)$ versus $O(m*(N/m^2))$ is both compact appropriate.}
+
+\response{ XXXX}
+
+\review{(2.8) The paper does not evaluate the model’s performance using a pool of 12,000 projects; the evaluation does not even use 1,000 projects.}
+
+\response{ will fix}
+
+
+\review{(2.9) [Sec. 1] The box under RQ4 is very confusing. We find the bellwether to simply study one project, but this note says we still need to analyze hundreds of projects to understand something like the importance of features. Is this right?}
+
+\response{ will fix}
+
+% \review{(2.10a) [Sec. 1] The contributions of this paper.
+% 1) The first contribution claims “bellwethers for transfer learner.” Indeed, the paper repeatedly refers to transfer learning. But I do not see where the transfer learning is actually being done when I inspect the procedure at the beginning of Sec. 3:}
+
+
+% \review{(2.10b)
+% [A] Step 1 characterizes each project using the same feature space and the paper does not support the fact that data are distributed differently. Moreover, the learning task remains the same. These facts do not support a transfer learning setting prima facia.}
+
+% \response{(2.10c) with respect, our usage is consistent with how the term is used in the SE literature, see LOTS of ferences~\cite{xxx}.}
+
+% \response{(2.10d) 
+% [B] Steps 2 and 3 involve grouping the projects based on similarity. There is no transfer learning here.}
+
+% \response{(2.10e) 
+% [C] There is no transfer learning done in Steps 4-6.}
+
+
+% \response{(2.10f) 
+% [D] Aside from inspecting each step in the main procedure, another way to determine whether GENERAL involves transfer learning is the following: This approach does not involve reweighting instances nor does it appear to involve transferring feature representations and/or parameters…and if it does then the paper does not even identify this fact much less argue for it being the case.
+% If something in this rationale [A-D] is not correct, then please clear up the explanation on transfer learning in the paper in terms/language the machine learning community has established to avoid ambiguity.}
+
+
+\review{2) I do not understand what the second contribution really is.}
+
+yes, we have deletet is
+
+\review{(2.11) [Sec. 2.1] I recommend removing this subsection from Background and condensing it in the motivation in Sec. 1.}
+
+good idea. paper now starts with 2.1
+
+\review{(2.12) [Sec 2.2] Figure 2 needs to be omitted. These “hypothetical” plots are not substantial. (The authors even say as much when discussing the results in Sec. 5.)}
+
+replaced with two dots poiints: descibning this in wors
+
+\review{(2.13) [Sec. 2.2] At least two-thirds of this sub-section is anecdotal. Does the gist of this subsection depend critically on the hypotheticals?}
+
+get rid of 2.2.. delete fig 2
+
+\review{(2.14) [Sec. 2.3] “Accordingly, here, we explore nearly 700 projects.” But just because 697 (this study) is larger than 24 (previous studies) does not mean external validity concerns are adequately addressed when one considers how complex the task is. Please comment.}
+
+\response{with respect, in terms of SE reserch, it it smuch larger thatnanythtngoins eeen before. but your concenr is valud. we have added
+a weaselt sentence at the end saying that we can benever assume generality of all porkect. }
+
+\review{(1.15) [Sec. 2.3] “If they ask ‘are we sure XYZ causes problems?’, can we say that we have mined enough projects to ensure that XYZ is problematic?” We can say XYZ is probably problematic, but that doesn’t answer the deeper question about causality. Do you agree?}
+
+\response{ ur right. we shiuld bneve wsay "cuase'. work removed. is associated, statisitally predicts for.}
+
+% \review{(1.16) [Sec. 2.4] “This art of moving data and/or lessons learned from one project to another is Transfer Learning.” I do not agree with this definition. Please cite this definition or use the definition of transfer learning established by the machine learning community.}
+
+\review{(2.17) [Sec. 2.4] “Successful transfer learning can have two variants…” Cite these variants. This is a software engineering paper—not a machine learning paper—that should reference other work for these fundamental details.}
+
+
+\response{citations added.}
+
+\review{(2.18) [Sec. 3.2] “…for large sample datasets…” What is the size of the design matrix? Does 21 product metrics and five process metrics mean 26 columns? If there are 697 projects and snapshots every six months, then how many rows are there?}
+
+\response{XXX}
+
+\review{(2.19) [Sec. 3.3] “As discussed below, the defect models assessed in these experiments” Incomplete.}
+
+\response{fixed}
+
+\review{(1.20) [Sec. 4.1] “stratified k=5 fold cross-validation an” Incomplete.}
+
+
+\response{fixed}
+
+\review{(1.21) [Sec. 5] “To put that another way, the answer to ‘is is [sic] possible to learn from too much data’, is ‘depends on what you value’” How does your concept of learning from too much data relate to the concept of overfitting? Same concept? Different concepts? If so, how are they different?}
+
+\response{timm}
+
+\review{(1.22) [Abstract] “When one exemplar project…offers the best advice then it can be used to offer advice for many other projects.” The word advice is confusing here. The so-called bellwether does not offer advice or recommendations. It is simply used as a characterization, right?}
+
+\response{predicttions}
+
+
+\review{(1.23) [Sec. 2.3] “…among developers, there is little agreement on what many issues relating to software.” Please reword.}
+
+\response{fixed}
+
+\review{(1.24) [Sec. 2.3(c)] “For example…” is a run-on sentence.}
+
+\review{(1.25) [Sec. 3] What are the units for dataset size in Fig. 4?}
+
+\review{(1.26) [Sec. 5] Why do you need a figure (Fig. 6) for two numbers?}
+
+
+\section*{Reviewer 3}
+
+\review{(1.1)What I find irritating is that the manuscript introduces a new approach GENERAL, which just applies hierarchical clustering. As far as I understand, hierarchical clustering is a well-known, standard, and largely-evaluated clustering algorithm. I don’t really see the need to rebrand it with a new name. What is the difference between GENERAL and hierarchical clustering other than the GENERAL is applied to defect prediction?}
+
+\review{(1.2) Figure 1 “shows a hypothetical cost comparison in AWS between standard bellwether and GENERAL.” If the Figure is hypothetical, why do we need it? Is it based on real data? As far as I understand, the plot is merely speculation and as such is should be included in scientific papers.}
+
+we will remove
+
+\review{(1.3) I am also very concerned about the (unproven) assumption that we can make conclusions that hold across multiple projects. While the dataset includes 700 projects, we have no information about the project, the domain applications, criticality (e.g., safety-critical systems vs. generic open-source Java libraries). I don’t really see how a model trained on dozens of open-source apache libraries can be applied to robotics, medical systems, etc. Note that for the latter domains, testing, requirements engineering, and maintenance are different and have peculiar standards (e.g., MC/CD coverage for automotive systems vs. statement coverage for non-critical systems). See below further comments about the quality of the dataset.}
+
+wirht respect.... but we can
+
+\review{(3.4) Similar to Figure 1, Figure 2 discussed hypothetical results/comparisons. Why do we need to speculate on hypothetical data rather than real data? The last two paragraphs in Section 2.2 make little sense to me. There is no reason to have them, if not for contributing to the overall overselling.}
+
+fig2 remove
+
+\review{(3.5) Up to page 5 (Sections 1-2), the paper broadly discusses the importance of learning models from hundreds of projects to have more generic and more reliable software analytics in a broader sense. However, from Section 3 to Section 6, the manuscript focuses on defect prediction ONLY.}
+
+sure. tahts oour case study
+
+\review{(1.6) How can we use one single sub-domain (i.e., defect prediction) to make bold statements that should be valid for software analytics in general? This overselling concerns me a lot. This manuscript DOES NOT provide any evidence that GENERAL works and is applicable for other contexts other than defect prediction. In other words, SE is not only Defect Prediction.}
+
+not in general. cant prove external validity. jsut for our 673 projects. wichi is orders of mangitude larger than anything seen ebfore.
+
+\review{(1.7) Therefore, the title, the abstract, introduction, motivation, and conclusions should mention defect prediction as to the only sub-domain in which GENERAL has been evaluated. Any overselling to other domains (or software analytics in a broader sense) should be removed (perhaps mentioned as part of future work) because it is not supported by what is in the empirical study/results.}
+
+we agree. titlte shcnage accouding.
+
+
+\review{(1.8) As mentioned in one of my comments above, the script seeks to model generalizability looking at the number of projects (and size) as solely dimension to look at. But what about the quality attributes, such as the application domain? What are the application domains of the projects? Are there only open-source projects? How about industrial projects, including the financial, automotive, and robotics sectors? How many web and mobile applications are in the sample? Does the dataset cover these domains? If not, how can we claim that 700 projects can bring us to generalizability?}
+
+not in general. cant prove external validity. jsut for our 673 projects. wichi is orders of mangitude larger than anything seen ebfore.
+
+\review{(1.9) Furthermore, the dataset looks quite strange to me. Looking at the defect distributions (left-most boxplot in Figure 4), I do see that 75\% of the projects (the last quartile) have more than 60\% of defective modules (classes/methods?). Some have a defective percentage above 80\%. Do we need machine learning to predict defects in projects where almost all modules are defectives? In these projects, a simple, constant classifier would work the best. The results also show this for ZeroR in Section 5.}
+
+unclear on this. zeroR tells us that it is not enough to do simple things
+
+
+\review{(3.10) Throughout the manuscript, the complexity of GENERAL is suggested to be $O(m * (N/m)^2)$. But there is proof about the complexity whatsoever. Either the manuscript cites proofs from existing papers (e.g., related work on hierarchical clustering) or provides a complete proof (perhaps in an appendix).}
+
+
+XXXX
+
+\review{(1.11) All the results are summarized in one single table (Figure 7), which shows the mean and the standard deviation of five evaluation metrics, as well as the rank of the statistical tests. There are two problems in aggregating the data in this way: (1)I am not sure that the arithmetic mean and the standard deviation are the appropriate metrics to use. Are the data normally distributed? Do we have many outliers? Perhaps, median and IQR are more appropriate as they are less affected by outliers.}
+
+use medians an QRQ
+
+{Maybe, the boxplots would be the most appropriate way to show the distributions. (2)The average across 700 projects makes little sense and hides what happens in each project. What happens per project? In how many projects does GENERAL performs better than the standard bellwether learner?}
+
+xplain
+
+\review{(1.12) Section 5 contains the following recommendation “As to ZeroR, we cannot recommend that approach. While ZeroR makes few mistakes (low ifas and low pfs), it scores badly on other measures (very low recalls and popt(20).” This argument does not convince me as ZeroR gets the best results for two metrics (as far as I understand). Please elaborate more on why we cannot use ZeroR. Besides, ZeroR may work relatively well because of projects with a very large number of defects. Perhaps, some in-depth analysis of the correlation between defect distributions and performances of the models would be very useful.}
+
+Xplan
+
+\review{(1.13) Section 5 (RQ3) ends with two recommendations about critical and non-critical systems. However, I could not find any analysis that can support these recommendations. I also queried the paper looking for the keywords “critical systems,” but I could not find anything except the recommendation with these keywords. To address this, there are only two mutually exclusive solutions: either remove the recommendations or add in-depth analysis that can provide empirical evidence to the claims.}
+
+
+cget rid of critial systems
