@@ -1,4 +1,4 @@
- \documentclass[10pt,journal,compsoc]{IEEEtran}
+\documentclass[10pt,journal,compsoc]{IEEEtran}
 \usepackage{alltt}
 \usepackage{multirow}
 \usepackage{graphicx}
@@ -26,7 +26,7 @@
 
 %\usepackage{hyperref}
 %\usepackage{cleveref}
-\usepackage{colortbl}
+% \usepackage{colortbl}
 \newmdenv[
   tikzsetting= {fill=light-gray},
   linewidth=1pt,
@@ -34,18 +34,18 @@
   shadow=false
 ]{myshadowbox}
 \usepackage{colortbl} 
-\usepackage{subcaption}
+% \usepackage{subcaption}
 \usepackage{blindtext, graphicx}
 \usepackage{textcomp}
-\usepackage{mathtools}
+% \usepackage{mathtools}
 \usepackage[hidelinks]{hyperref}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{caption}
 \usepackage{color}
 \usepackage[final]{listings}
-\usepackage{graphicx} 
-\usepackage{multirow}
+% \usepackage{graphicx} 
+% \usepackage{multirow}
 \usepackage{balance}
 \usepackage{picture}
 \usepackage{relsize}
@@ -55,7 +55,7 @@
 \setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
 \setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}%
-\usepackage{array}
+% \usepackage{array}
 \usepackage{makecell}
 \usepackage{bigstrut}
 \newcommand{\tion}[1]{\S\ref{sect:#1}}
@@ -85,19 +85,19 @@
 \usepackage{algorithmicx}
 \usepackage{algpseudocode}
 \usepackage[export]{adjustbox}
-\usepackage{mathtools}
+% \usepackage{mathtools}
 \setlength{\belowcaptionskip}{-10pt}
 \renewcommand{\footnotesize}{\scriptsize}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
-\definecolor{lightgray}{gray}{0.8}
+% \definecolor{lightgray}{gray}{0.8}
 \definecolor{LightCyan}{rgb}{0.88,1,1}
 \definecolor{darkgray}{gray}{0.7}
 \definecolor{Gray}{rgb}{0.88,1,1}
 \definecolor{Gray}{gray}{0.85}
 \definecolor{Blue}{RGB}{0,29,193}
 \definecolor{MyDarkBlue}{rgb}{0,0.08,0.45} 
-\definecolor{pink}{RGB}{231,95,110}
+\definecolor{pink}{rgb}{231,95,110}
 \definecolor{lightergray}{rgb}{0.85, 0.85, 0.85}
 \definecolor{darkgray}{rgb}{0.47, 0.47, 0.47}
 \definecolor{lightestgray}{rgb}{0.95, 0.95, 0.95}
@@ -114,7 +114,7 @@
   showspaces=false,
   showstringspaces=false,
   keywordstyle=\color{pink}\bfseries\sffamily\fontsize{2.8mm}{0.6em},
-  emph={train, predict, add_samples, FindBellwether, BEETLE, get_cost, sample, get_perf, remove_non_bellwethers, LinearTransform, GPTransform,General,get_featrures,BIRCH,bellwether,get_bellwethers,O(N)}, 
+  emph={train, predict, add_samples, FindBellwether, BEETLE, get_cost, sample, get_perf, remove_non_bellwethers, LinearTransform, GPTransform,General,get_featrures,BIRCH,bellwether,get_bellwethers,O(N), if, else, in,for, return}, 
   emphstyle=\bfseries\color{blue!50!black} ,
   stringstyle=\itshape\color{black!50},
   commentstyle=\color{red!50!black}\it,
@@ -123,12 +123,18 @@
   escapeinside={\%*}{*)}
 }
 
+\newcommand{\bluecheck}{}%
+\DeclareRobustCommand{\bluecheck}{%
+  \tikz\fill[scale=0.4, color=blue]
+  (0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;%
+}
+
 \newcommand{\response}[1]{\textcolor{blue}{#1}}
 \usepackage[tikz]{bclogo}
 \newenvironment{RQ}[1]%
 {\noindent\begin{minipage}[c]{\linewidth}%
 \begin{bclogo}[couleur=gray!20,%
-                arrondi=0.1,logo=\bctrombone,% 
+                arrondi=0,logo=\none,% 
                 ombre=true%
                 ]{{\small  ~#1}}}%
 {\end{bclogo}\vspace{2mm}\end{minipage}}
@@ -192,15 +198,15 @@ numbers=left
  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 
 \newcommand{\flash}{{\sc Flash}\xspace}
-\usepackage{soul}
+% \usepackage{soul}
 \usepackage{color}
 
 \definecolor{awesome}{rgb}{1.0, 0.13, 0.32}
 
 
-\usepackage{amsmath}
+% \usepackage{amsmath}
 \definecolor{Gray}{gray}{0.95}
-\definecolor{LightGray}{gray}{0.975}
+% \definecolor{LightGray}{gray}{0.975}
 
 \DeclareRobustCommand{\hlgreen}[1]{{\sethlcolor{green}\hl{#1}}}
 \DeclareRobustCommand{\hlyellow}[1]{{\sethlcolor{yellow}\hl{#1}}}
@@ -275,6 +281,9 @@ numbers=left
 \newcommand{\quartx}[4]{\begin{picture}(100,1)%1
 {\color{black}\put(\numexpr #2 * 6  \relax,3){\color{red}\circle*{4}}\put(\numexpr #1*6 \relax ,3){\line(1,0){\numexpr #3*6 \relax}}}\end{picture}}
 
+\usepackage{tcolorbox}
+\newtcolorbox{blockquote}{colback=black!5,boxrule=0.4pt,colframe=black,fonttitle=\bfseries}
+
 \begin{document}
 \title{   Finding GENERAL    Defect Prediction Models   
 Within Hundreds  of   Software Projects}
@@ -294,23 +303,21 @@ E-mail:[smajumd3,rkrish11]@ncsu.edu, tim@ieee.org}}
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-% \respto{2-22}{\color{blue}Given a group of software projects,
-% there often exists  one   exemplar project
-% that offers the best prediction for all others.
-% Such ``bellwether projects''
-% can be used to make quality predictions that are general
-% to that group.}
-% Existing  methods  for  finding bellwether  are  very slow.  When  applied  to  the  697  projects  studied  here, standard bellwether methods   took  60  days  of  CPU  to  find  and  certify  the  bellwethers
-% Hence,we  propose a faster way to find bellwethers. 
-% GENERAL applies hierarchical clustering to groups of project data. At each level within a tree of clusters, one bellwether is computed from sibling projects, then promoted up the tree. This hierarchical method is a scalable approach to learning effective models from very
-% large data sets. For  hundreds of projects, the defect prediction models generated from GENERAL's bellwether were just as good as those found via  standard methods. 
 
-\respto{2-22}{\color{blue}Given a group of software projects, there often exists  one   exemplar project that offers the best prediction for all others. Such ``bellwether projects'' can be used to make quality predictions that are general to that group.} Existing  methods  for  finding bellwether  are  very slow.  When  applied  to  the  697  projects  studied  here, standard bellwether methods   took  60  days  of  CPU  to  find  and  certify  the  bellwethers. Also among a large group of software projects there may be subgroup of projects which are more similar to each other then other subgroups and can have a bellwether for each such subgroup of projects. Existing bellwether methods does not take this into consideration to find multiple bellwether. Hence, we  propose a faster and better  way to find bellwethers. GENERAL applies hierarchical clustering to groups of project data. At each level within a tree of clusters, one bellwether is computed from sibling projects, then promoted up the tree. This hierarchical method is a scalable approach to learning effective models from very large data sets. For  hundreds of projects, the defect prediction models generated from GENERAL's bellwether were just as good as those found via standard methods.
+
+\respto{2-22}{\color{blue}Given a large group of software projects, there often exists  a few   exemplar project(s) that offers the best prediction for all others. Such ``bellwether projects'' can be used to make quality predictions that are general to many other projects.} 
+
+Existing  methods  for  finding bellwether  have two problems. Firstly, they are  very slow.  When  applied  to  the  697  projects  studied  here, standard bellwether methods   took  60  days  of  CPU  to  find  and  certify  the  bellwethers.
+Secondly, they assume that only one bellwether exists and, amongst hundreds of projects, they may exist  subgroups, each of which requires their own bellwether.  
+
+GENERAL is a new bellwether method that addresses both problems. GENERAL   applies hierarchical clustering to groups of project data. At each level within a tree of clusters, one bellwether is computed from sibling projects, then promoted up the tree.  In this way, GENERAL can find multiple
+bellwethers, if they exist. Also, GENERAL's hierarchical decomposition runs much faster (and scales better) than standard
+bellwether methods.  
 
 \end{abstract}
 
 \begin{IEEEkeywords}
-Transfer Learning, Bellwether, Defect Prediction, Software Analytics. 
+Transfer Learning, Bellwether, Defect Prediction, Software Analytics, Logistic Regression. 
 \end{IEEEkeywords}}
 
 
@@ -328,8 +335,8 @@ Transfer Learning, Bellwether, Defect Prediction, Software Analytics.
 
 \section{Introduction}
 
-\respto{1-2}\respto{1-3}{\color{blue} Researchers and industry practitioners makes use of data-driven decision making data mining algorithms build software quality models from project data.For example, many research and industrial groups generate defect predictors from software metrics~\cite{ghotra2015revisiting, zimm09 ,okutan2014software, he13, Zhang16aa, nam2017heterogeneous, Me13, Tantithamthavorn18, me09b, me10a, peters2015lace2, nam2018heterogeneous, menzies2011local, zimmermann09}. These metrics can take  forms including process metrics (that describe how and who updates the code) and product metrics (such as number of methods per class, lines of codes, etc). One advantage of this approach is that the collection of these metrics is very fast.
-Also,  the subsequent data mining (to generate the quality models) can be fully automated and can scale to a large number of projects. Hence, data-driven decision making  is widely used in   SE research and   industrial practice.~\cite{tosun2010ai,kim2015remi,wan2018perceptions} }
+\respto{1-2}\respto{1-3}{\color{blue} Researchers and industry practitioners make use of data-driven decision making data mining algorithms to build software quality models from project data. Many research and industrial groups generate defect predictors from software metrics~\cite{ghotra2015revisiting, zimm09 ,okutan2014software, he13, Zhang16aa, nam2017heterogeneous, Me13, Tantithamthavorn18, me09b, me10a, peters2015lace2, nam2018heterogeneous, menzies2011local, zimmermann09}. These metrics can take  forms including process metrics (that describe how and who updates the code) and product metrics (such as the number of methods per class, lines of codes, etc). When the creation of such models is fully automated
+(using data mining), then this approach scales a large number of projects. Hence, data-driven decision making  is widely used in   SE research and   industrial~\cite{tosun2010ai,kim2015remi,wan2018perceptions}. }
 
 \begin{table*}
 \begin{center}
@@ -339,67 +346,34 @@ Also,  the subsequent data mining (to generate the quality models) can be fully 
 \label{unstable}
 \end{table*}
 
-{\color{blue} But what is the external validity of the conclusions reached  via
-the these data mining methods? Prior to this paper, the usual result is that such conclusions are not general to multiple projects. For example, Table~\ref{unstable} summarizes the results of dozens of studies. In that table we observe that, from project to project, very different attributes are most associated with defect prediction. This is troubling since,   as
+{\color{blue} But what is the external validity of the conclusions reached  via these data mining methods? Prior to this paper, the usual result is that such conclusions are not general to multiple projects. Table~\ref{unstable} summarizes the results of dozens of studies. In that table, from project to project, very different attributes are most associated with defect prediction. This is troubling since,   as
 Sawyer et al. argue,   project-general
-insights are the key driver for businesses to invest in data analytics.
-If  new models keep being generated whenever we switch to  new projects, then that exhausts the ability of  users to draw insight from  new data.
+insights are the key driver for businesses to invest in data analytics. If  new models keep being generated whenever we switch to  new projects, then that exhausts the ability of  users to draw insight from  new data.
 Hassan~\cite{Hassan17} cautions that managers lose faith in software analytics if its models keep changing since  the assumptions used to make prior policy decisions may no longer hold. 
  Further,
-if we are unsure what factors most influence quality, it is difficult to design and implement and deploy tools that can successfully improve that quality.
+if we are unsure of what factors most influence quality, it is difficult to design and implement and deploy tools that can successfully improve that quality.
 Lastly,
 consider the task of training a   novice software engineers or newcomers to a project. If our models are not stable, then it hard to teach what factors  most influence software quality.}
 
 
-%Many Large organizations and many open source communities are using large scale data analysis on historical data available to them. With large quantity of data available to them, how should they reason about software quality? Should they use general defect prediction models that hold over many projects? Or must they use an ever-changing set of defect prediction models that are continually build and adapted to the task at hand? If the latter were true then there would be no stable models and conclusions about what is best practice for SE for avoiding defects (since those best practices would keep changing as we move from project to project). As discussed in section~\ref{sec:Motivation}, such conclusion instability has detrimental implications for {\em generality, trust, insight, training}, and {\em tool development}.}
 
-% Researchers and industry practitioners makes use of different machine learning models to automatically generate software quality models(defect predictor) from project data comprises of software quality metrics (Commonly used software metrics for defect prediction are complexity metrics (such as lines of code, Halstead metrics, McCabe’s cyclometic complexity, and CK metrics) and process metrics(such as Number of revisions, lines added and deleted)) . Researches and industry practitioners use these defect predictors to predict for defect in new set of changes and to learn what are the important metrics that are responsible for finding these defects. These quality metrics can be collected with much ease from the code base of different software systems from large organizations and open source community, and 
-
-
-%   After a decade of intensive research into automated software analytics, what general principles have we learned? While that work has generated specific results about specific projects~\cite{Bird:-24015,menzies2013software}, it has failed (so far) to deliver general principles that are demonstrably useful across many projects~\cite{menzies2013guest} (for an example of how {\em more} data can lead to {\em less} general conclusions, see below in {\S}2a).
-
-% Is that the best we can do?
-
-% How should we reason about software quality?  Should we use  general models that hold over many projects? Or must we use an ever-changing set of ideas that are   continually adapted to the task at hand? 
-% Or does the truth lie somewhere in-between?  
-% To say that another way:
-% \bi
-% \item
-% Are there general principles we can use to guide project management, software standards, education,   tool development, and legislation about software? 
-% \item
-% Or is  software engineering some ``patchwork quilt'' of ideas and methods where it only makes sense to reason about specific, specialized, and small sets of  projects?
-% \ei
-% If the latter were true then
-%  then there would be no stable conclusions about what is best practice for SE   (since those best practices would keep changing as we move from project to project). As discussed in section~\ref{sec:Motivation}, such conclusion instability has   detrimental implications for {\em generality, trust, insight, training}, and {\em tool development}.
- 
-% \respto{1-3}{\color{blue}Researchers and industry practitioners makes use of software analytics for many tasks to access software quality, such as:
-% \bi
-% \item Predicting if a submitted code is likely to buggy or not.
-% \item Improving code quality by detecting code smells.
-% \item Issue lifetime estimation to enable effective development and maintenance of their software systems.
-% \ei
-
-% Large organizations and many open source communities uses data-driven decision making, where they learn using large scale data analysis on historical data available to them. With large quantity of data available to them, how should they reason about software quality? Should they use  general models that hold over many projects? Or must they use an ever-changing set of ideas that are   continually adapted to the task at hand? If the latter were true then there would be no stable conclusions about what is best practice for SE   (since those best practices would keep changing as we move from project to project). As discussed in section~\ref{sec:Motivation}, such conclusion instability has   detrimental implications for {\em generality, trust, insight, training}, and {\em tool development}.}
-%One  explanation for the limited conclusions (so far) from automated analytics is  {\em how much} data we are using for analysis. A typical software analytics research paper uses less than a few dozen projects  (exceptions: see~\cite{krishna18a, zhao17, agrawal18}). Such small samples can never represent something as diverse as software engineering. 
-
-%{\color{blue} Finding general defect predictors  across many projects is a complex task.  
- %For a long list of   conclusions that were found to be  unstable across multiple projects, see~\cite{Me13}. This problem is so endemic in software engineering that other journals have devoted entire special issues to the topic~\cite{Menzies2012}.}
 
 
  
 A new approach for transferring conclusions
 across multiple projects
 is     the ``bellwether'' method~\cite{krishna2018bellwethers,krishna16a,mensah18z,mensah2017stratification,mensah2017investigating}.\respto{1-1a}\respto{2-2}{\color{blue} Given a community of projects developed by the same organization,
-a ``bellwether'' is the   whose data yields the best analytic (i.e. defect prediction, effort estimation etc) on all others} (and we call that the ``bellwether'' since that is the
-name of the  leading sheep of a flock, with a bell on its neck).  This method:
+the ``bellwether'' is a project or  a handful of projects
+whose data yields the best analytic (i.e. defect prediction, effort estimation, etc) on all others}\footnote{We call that the ``bellwether'' since that is the
+name of the  leading sheep of a flock, with a bell on its neck.}. In this  method:
 \bi
-\item Finds a  ``bellwether'' project that is exemplar for the rest;
-\item Draw conclusions from  that project.
+\item We find a few exemplar ``bellwethers'';
+\item We draw conclusions from  those projects.
 \ei
 {\color{blue} \respto{1-1a}\respto{3-5}This approach is useful since bellwethers can generate
 models that hold across multiple data sets.
-Also,   bellwether are a better
-way to transfer lessons between software projects~\cite{krishna2018bellwethers,krishna2017simpler, nair19a, krishna16, krishna16a}  than many other methods including
+Also, bellwethers are a better
+way to transfer models between  projects~\cite{krishna2018bellwethers,krishna2017simpler, nair19a, krishna16, krishna16a}  than many other methods including
 the Burak filter~\cite{turhan09}, Ma et al.~\cite{Ma2012}'s transfer naive Bayes (TNB); and Nam et al.'s  TCA  and TCA+, algorithms~\cite{Nam13,Nam2015}.} 
 
 % When new projects arrive, then even before there is much experience with those new projects,  models learned from other projects can be applied to the new project (just by studying the bellwether),
@@ -412,149 +386,80 @@ the Burak filter~\cite{turhan09}, Ma et al.~\cite{Ma2012}'s transfer naive Bayes
  %of projects. 
  
 
-But existing  methods for bellwether transfer are very slow. When applied to the 697 projects studied here, they took 60 days of CPU to find and certify the bellwethers.
-%There are many reasons for that including how the models were certified (20 repeats  with different train/test sets)
-%and the complexity of the analysis procedure (which includes fixing class imbalance and feature selection). But the major cause of this slow down was that those   methods  required an $O(N^2)$ comparison between   $N=697$ projects.
+Existing  methods  for  finding bellwether  have two problems. Firstly, they are  very slow.  When  applied  to  the  697  projects  studied  here, standard bellwether methods   took  60  days  of  CPU  to  find  and  certify  the  bellwethers.
+Secondly, they assume that only one bellwether exists and, amongst hundreds of projects, they may exist  subgroups, each of which requires their own bellwether.  
 
-Accordingly, this paper explores a novel approach that can find  bellwethers much faster than standard methods.    
-%dramatically improves on existing bellwether methods.
+GENERAL is a new bellwether method addresses both problems.  
  {\color{blue}\respto{1-3a} Our GENERAL    algorithm uses hierarchical clustering  to recursively divide a large number of projects into smaller clusters. 
- Starting at the leaves of that tree of clusters, GENERAL finds the    bellwethers within sibling projects. That bellwether is then promoted up the tree. The output of GENERAL is the project promoted to the top of the tree of clusters. }
+ Starting at the leaves of that tree of clusters, GENERAL finds the    bellwethers within sibling projects. That bellwether is then promoted up the tree.}
 %Note that  GENERAL only needs
 %to compare $O(m*(N/m)^2)$  projects to find the bellwether. 
 
-  GENERAL has two advantages over standard bellwether methods.
+  GENERAL has three advantages over standard bellwether methods.
 Firstly, 
 according to several of the criteria studied here, GENERAL
 can produce better predictors for software quality.  Secondly, it is much  
 faster than standard bellwethers
 (and scales to larger sets of data).
+Thirdly, as shown below, GENERAL can find multiple bellwethers (if they are needed).
 
-% \bi
-% \item
-% This paper applies GENERAL and traditional $O(N^2)$ bellwether to 697 projects.
-% GENERAL and the traditional approach terminated in 1.5 and 72 hours (respectively).
-% \item 
-%  Figure~\ref{fig:cost} shows a hypothetical cost comparison in AWS between standard bellwethers and   GENERAL when running for 100 to 1,000,000 projects. Note that GENERAL
-%  is inherently more scalable.
-%  \ei
-% \begin{figure}[!t]
-%     \centering
-%     \includegraphics[width=\linewidth]{figs/cost.pdf}
-%     \caption{Hypothetical cost comparison between GENERAL and default Bellwether.}
-%     \label{fig:cost}
-% \end{figure} 
 To present GENERAL and to assess its value, this
-paper asks and answers the following questions:
-            \respto{1-6}
-            
-            
-            {\color{blue}
-            \textbf{RQ1}:  How slow is conventional bellwether method?
-            
-            As a starting point for this research,  we need to document the problems associated with existing bellwether methods. RQ1 offers the following theoretical result:
-            \begin{RQ}{
-               Conventional bellwether method as proposed by Krishna et al~\cite{krishna2018bellwethers,krishna16a} uses a $ O(N^2) $ comparisons to find the ``bellwether'' among a community of N (697 projects in this experiment) projects.}
-            \end{RQ}
+paper asks and answers the following questions.
+\newpage         
+             \noindent {\color{blue}
+            \textbf{RQ1}: {\bf  How slow are   conventional bellwether methods?} \respto{1-6}
+            As a starting point for this research,  we need to document the problems associated with existing bellwether methods. RQ1 offers the following theoretical result:}
+           \vspace{-3mm}\begin{quote}
+           \item {\em
+              The conventional bellwether method as proposed by Krishna et al~\cite{krishna2018bellwethers,krishna16a} is slow since it requires  $ O(N^2) $ comparisons to find   one bellwether within a community of N  projects.}
+        \end{quote}
+             
             
          
       
-            \textbf{RQ2}:  How fast is GENERAL bellwether?
             
-            RQ2 explains the RQ1 result:
-            
-            \begin{RQ}{
-            In theory, 
-             GENERAL is much faster since
-             its computational complexity is  $O(m*(N/m)^2)$.}
-            \end{RQ}
-            
-            }
-
- 
-            \textbf{RQ3}:   In practice,
-            can the hierarchical clustering of GENERAL tame slow runtimes seen in   bellwether-based reasoning?
-            
-            This research question checks if our new method tames the runtime complexity of standard bellwether. We find that:
-            \begin{RQ}{
-                When learning
-bellwethers from 697 projects,  GENERAL and   traditional   approaches terminated in 1.5 and 72 hours (respectively).}
-            \end{RQ}
-That is to say,  GENERAL is far faster
-than standard bellwether methods.
-         
-
- 
-           \noindent \textbf{RQ4}:  Is this faster bellwether effective?
-            
-            Sometimes,  a faster method   comes at the cost of a less effective analysis. Hence, this research question compares
-             standard and the GENERAL bellwether methods. We find that:
-            
-            \begin{RQ}{
-                Across multiple performance criteria, the faster GENERAL bellwether algorithm never performs worse that standard bellwether. And measured in terms of recall and false alarm, GENERAL performs statistically much better.}
-            \end{RQ}
-        
+            \noindent \textbf{RQ2}:  {\bf In theory, how much faster is GENERAL's hierarchical clustering?}        
+            \begin{quote}
+               {\em              GENERAL is theoretically much faster since
+             its computational complexity is  $O(m*(N/m)^2)$.
+            }\end{quote}
+            \noindent \textbf{RQ3}:  {\bf  In practice,
+            how fast is  GENERAL?} This research question checks if GENERAL tames the run-time complexity of standard bellwether. We find that:
+            \begin{quote}
+              \noindent {\em    
+                When learning bellwethers from 697 projects,  GENERAL and   traditional   approaches terminated in 1.5 and 72 hours (respectively). That is to say,  GENERAL is far faster than standard bellwether methods.}
+            \end{quote}
+           \noindent \textbf{RQ4}: {\bf  Is this faster bellwether effective?}
+            Sometimes,  a faster method   comes at a cost of less effective analysis. Hence, {\bf RQ4} compares
+             standard and the GENERAL bellwether method. We  find that:
+            \begin{quote}
+              \noindent {\em  
+                Across multiple performance criteria, the faster GENERAL bellwether algorithm never performs worse than standard bellwether. And measured in terms of recall and false alarm, GENERAL performs statistically much better.}
+            \end{quote}
        \noindent 
-            \textbf{RQ5}: Does learning from too many projects have detrimental effect?
-            
-            We ask this since Petersen and Wohlin~\cite{Petersen2009} argue that for empirical SE, context matters.  They
-would say that   it is  a mistake
-to learn from too much data, since that can inappropriately combine 
-data from difference contexts. 
-What we will show is that:
-            \begin{RQ}{
-            ZXXXAssessed in terms of {\em recall},
-it is better to learn bellwethers from more data rather than less.
-But assessed in terms of {\em false alarms}, 
-while learning bellwethers
-from many projects is useful,
-as predicted by Petersen and Wohlin, it is possible to learn from too much data. }
-            \end{RQ}
-            
-         \noindent 
-            \textbf{RQ6}: What exactly did we learn from all those projects?
-            
-            \begin{RQ}{
-                \respto{2-9}\respto{3-13} {\color{blue}
-                In terms of defect prediction,
-issues of inter-class interface are paramount.
-Many other  issues are far less important such as file size, depth of inheritance tree, intra-method complexity, file size, revision history.}}
-            \end{RQ}
-
+            \textbf{RQ5}: {\bf Does learning from too many projects have detrimental effects?}
+          In the case of GENERAL's hierarchical clustering, we show that it is a mistake to  learn quality models from the very top of the cluster tree (where data is combined from all projects). Rather, it is best to use  models seen   one level down from the root. That is:
+             \begin{quote}
+              \noindent {\em  
+            Learning from  a few hundred  projects is better
+than learning from just a few dozens of projects.
+But after generalizing over 200 projects (approx), the learned
+model starts degrading.  
+  }\end{quote} 
+\noindent To say that another way,   when learning from a very large number of projects (hundreds), they may be useful
+to learn a handful of bellwethers, each of which covers (say) just a few hundred projects. In this regard,
+GENERAL is better than prior bellwether algorithms
+since GENERAL can find multiple bellwethers while
+older methods only ever find one.
     
-\noindent Overall, the  contributions of this paper are
-\bi
 
-\item \textbf{Hierarchical bellwethers for  transfer learner:} We
-offer a  novel hierarchical clustering    bellwether algorithm  called GENERAL  (described in section~\ref{GENERAL}) that
-finds bellwether in hierarchical clusters, then promotes those bellwether to upper levels
-The final  project that is promoted to the root of the hierarchy is returned as  ``the'' bellwether.
-
-\item \textbf{Showing inherent generality in SE:}
-In this study we discover a source data set for transfer learner from a large number of   projects, hence proving generality in the SE datasets (where some datasets can act as exemplars for the hundreds of other projects).
-
-\item \textbf{Showing when ``enough is enough'': }
-In this study 
-Learning from  a few hundred  projects is better
-than learning from just a few dozens   projects.
-But after 200 projects (approx) the learned
-model start degrading. 
-This is to say that 
-there is an limit beyond
-which more data is actually detrimental to learning software quality models.
-
-
-
-
-\item \textbf{Lessons   about software quality that are general
-to hundreds of software projects:}
-  As said above,    in  this sample of  697  projects,  we find that code  interface issues are the dominant factor on software defects. 
   
   
-\item \respto{1-5d} \respto{1-5h}{\color{blue}\textbf{ Replication Package:} Our  replication package\footnote{\href{http://tiny.cc/bellwether}{http://tiny.cc/bellwether}}   contains  all the datasets and scripts used in this paper.}
+ 
+The rest of this paper is structured as follows. Some background and related work are discussed in section~\ref{sec:literature}. Our algorithm GENERAL is described in section~\ref{GENERAL} along with performance measures in section~\ref{sec:Measures}. Data collection and experimental setup are in section~\ref{sec:Data Collection}. Followed by evaluation criteria in section~\ref{eval}. The results and answers to the research questions are presented in section~\ref{sec:results}. Discussion in section~\ref{sec:rq6}, which is followed by threats to validity in section~\ref{sec:validity}. Finally, the conclusion is provided in section~\ref{sec:concl}.
 
-\ei
-The rest of this paper is structured as follows. Some background and related work are discussed in section~\ref{sec:literature}. Our algorithm GENERAL is described in section~\ref{GENERAL}. Data collection and experimental setup are in section~\ref{sec:Data Collection}. Followed by evaluation criteria in section~\ref{eval} and performance measures in section~\ref{sec:Measures}. The results and answers to the research questions are presented in section~\ref{sec:results}, which is followed by threats to validity in section~\ref{sec:validity}. Finally the conclusion is provided in section~\ref{sec:concl}.
+
+ \respto{1-5d} \respto{1-5h}{\color{blue} Note that our  replication package\footnote{\href{http://tiny.cc/general\_bellwether}{http://tiny.cc/general\_bellwether}}   contains  all the datasets and scripts used in this paper.}
 
 
 \respto{3-6}{\color{blue}  Before beginning, we offer
@@ -573,8 +478,8 @@ We can
  generate one defect predictors across
  hundreds of projects.
   \item
-  That 
-  predictor performs   just as well as those found via  standard methods.
+  Those 
+  predictors perform  just as well as those found via  standard methods.
   \ei
   There are two important features of the conclusions reached via the methods of this paper:
   \bi
@@ -585,46 +490,15 @@ We can
   that are stable across hundreds of projects. As argued above, such a result
 has not been previously reported in SE.
 \item
-the conclusions reached in this way used automatic data mining methods applied to open source data. That is, our results   can be repeated/ improved/ refuted by other research teams.
-\ei
-We are unaware of any other repeatable/refutable result in SE that can be shown to hold over so many projects.}
+The conclusions reached in this way used automatic data mining methods applied to open source data. That is, our results   can be repeated/ improved/ refuted by other research teams.
+\ei}
 
 
 
 
  
  
-%If our conclusions about best practices for SE projects keep changing, that will be detrimental to generality, trust, insight, training, and tool development.
 
-
-
-% \begin{figure}[!t]
-%     \centering
-%     \includegraphics[width=\linewidth]{figs/predictive_power.pdf}
-%     \caption{Two hypothetical results about how training set size might effect the efficacy of quality prediction for software projects.}
-%     \label{fig:predictive_power}
-% \end{figure}
-
-
- 
-%Just to balance the above argument,
-%we add that   sometimes it is possible to learn from {\em too much data}.
-
-%Hence, this work divides into (a)~automated methods for finding sets of projects in the same {\em community}; and (b)~within each {\em community}, find the model that works best. 
-
-%\respto{2-12}\respto{3-2}{\color{blue} The {\em size} of the communities found in this way would have a profound impact on how we should reason about software engineering. Consider in this experiment of 697 projects, we build a set of defect predictor by learning bellwether from smalls cluster of $\approx10$ projects,  medium clusters of $\approx100$ projects, a large cluster containing $\approx600$ projects and a self test. In this scenario if we see the defect prediction models build  using bellwethers from medium set of clusters works better than set smalls clusters as well as the large cluster, then in this case, while we could not offer a single model that covers {\em all} of SE, we could offer a handful of models, each of which would be relevant to project clusters. While if we see only self test works in this case and learning from more projects makes quality predictions worse which means the our projects break up into ``communities'' of size one. In this case,  (a)~principles about what is ``best practice'' for different software projects would be constantly changing (whenever we jump from small community to small community); and (b)~the generality issues would be becoming open and urgent concerns for the SE analytics community.}
-
-
-
-
-% The {\em size} of the communities found in this way would have a profound impact on how we should reason about software engineering. Consider the hypothetical results of Figure~\ref{fig:predictive_power}. The \textcolor{blue}{{\bf BLUE}} curve shows some quality predictor that (hypothetically) gets better, the more projects it learns from (i.e. higher levels in the hierarchical cluster). After about learning from 1000 projects, the \textcolor{blue}{{\bf BLUE}} curve's growth stops and we would say that community size here was around cluster size in level 1. In this case, while we could not offer a single model that covers {\em all} of SE, we could offer a handful of models, each of which would be relevant to project clusters at that level. 
-% %Accordingly, we would say that there are many cases where  wisdom from prior projects can be readily applied to guide future projects and (b)~the generality issues raised are not be so pressing.
-
-% Now consider the hypothetical \textcolor{red}{{\bf RED}} curve of Figure~\ref{fig:predictive_power}. Here, we see that (hypothetically)  learning from more projects makes quality predictions worse which means the our 10,000 projects break up into ``communities'' of size one. In this case,  (a)~principles about what is ``best practice'' for different software projects would be constantly changing (whenever we jump from small community to small community); and (b)~the generality issues would be becoming open and urgent concerns for the SE analytics community.
-
-% In summary, the above two sections lead to our  research question {\bf  RQ4}:
-% does learning from too many projects have detrimental effects. Later in this
-% paper, we will return to this issue.
 
 
 \section{Background and Related Work}
@@ -632,34 +506,21 @@ We are unaware of any other repeatable/refutable result in SE that can be shown 
 \subsection{Why Transfer Knowledge?}
 \label{sec:related}
 
-In this section, we ask ``Why even bother to transfer lessons learned between projects?''. In several recent studies ~\cite{bettenburg2012think, menzies2012local, posnett2011ecological} with readily-available data from SE repositories, numerous authors report the locality effect in SE; i.e. general models outperformed by specialized models localized to particular parts of the data.
-For example.
-Menzies et al. explored local vs global learning in defect prediction and effort estimation~\cite{menzies2012local}  and found that
- learning rules from specific local data was more
- effective than learning rules from the global space.
- 
- 
-On the other hand,
-Herbold et al.~\cite{herbold2017global}  offered an opposite conclusion.
-In their   study regarding global vs local model for cross-project defect prediction,
-they saw that  local models offered little to no improvement over models learned
-from all the global data.
-One explanation for this discrepancy  is the size of number of projects that they explored.
-\respto{2-14}Menzies, Herbold et al. explored less than two dozen projects which raises issues of external validity in their conclusions. Accordingly, here,  we explore nearly 700 projects. As shown below, the results of this paper agree  more with Herbold et al. than  Menzies et al. since we show that one global model (learned from a single bellwether projects) does just as well as anything else.
 
-Apart from the above discrepancy in research results, there are many other reasons to
-explore learning from many projects. Those reasons   falls into four groups:
 
-\textbf{(a) The lesson on big data is that that the {\em more} training data, the {\em better} the learned model:} Vapnik~\cite{vapnik14} discusses examples where models accuracy improves to nearly 100\%, just by training on $10^2$ times as much data. This effect has yet to be seen in SE data~\cite{menzies2013guest} but that might just mean we have yet to use enough training data (hence, this study). 
+There are many other reasons to
+explore learning from many projects. Those reasons   fall into four groups:
+
+\textbf{(a) The lesson on big data is that that the {\em more} training data, the {\em better} the learned model:} Vapnik~\cite{vapnik14} discusses examples where the model's accuracy improves to nearly 100\%, just by training on $10^2$ times as much data. This effect has yet to be seen in SE data~\cite{menzies2013guest} but that might just mean we have yet to use enough training data (hence, this study). 
 
 \textbf{(b) We need to learn from more data since there is very little agreement on what has been learned so far:} 
 % Another reason to try generalizing across more SE data is that, among developers, there is little agreement on what many issues relating to software:
-\respto{2-23}{\color{blue} Among developers,  there is little agreement on what is of importance relating to software quality and other aspects of the software development:}
+\respto{2-23}{\color{blue} Among developers,  there is little agreement on what is of importance relating to software quality and other aspects of software development:}
 \bi
     \item
-    According to Passos et al.~\cite{passos11},  developers often  assume that the lessons they learn from a few past projects are general to all their future projects. They comment, ``past experiences were taken into account without much consideration for their context'' ~\cite{passos11}. 
+    According to Passos et al.~\cite{passos11},  developers often  assume that the knowledge they learn from a few past projects are general to all their future projects. They comment, ``past experiences were taken into account without much consideration for their context'' ~\cite{passos11}. 
 	\item
-	J{\o}rgensen \& Gruschke~\cite{Jo09} offer a similar warning. They report that the suppose software engineering ``gurus'' rarely use lessons from past projects to improve their future reasoning and that such poor past advice can be detrimental to new projects.~\cite{Jo09}.
+	J{\o}rgensen \& Gruschke~\cite{Jo09} offer a similar warning. They report that the suppose software engineering ``gurus'' rarely use knowledge from past projects to improve their future reasoning and that such poor past advice can be detrimental to new projects.~\cite{Jo09}.
     \item 
     Other studies have shown some widely-held views are   now questionable given new evidence. Devanbu et al. examined responses from 564 Microsoft software developers from around
 	the world. They comment programmer beliefs can vary with each project, but do not necessarily
@@ -668,19 +529,16 @@ explore learning from many projects. Those reasons   falls into four groups:
 	
 The good news is that using software analytics, we can correct the above misconceptions. \respto{2-15}{\color{blue} If data mining shows that higher or lower XYZ is cause for code to be  bug prone, then we could  guide developers to avoid having higher or lower XYZ. But will developers listen to us? If they ask ``are we sure having higher or lower XYZ is a statistical predictor for bug prone code?'', can we say that we have mined enough projects to ensure that XYZ is a statistical predictor for bug prone code?} 
 
-%\respto{2-24}{\color{blue} It turns out that developers are not the only one's confused about how various factors influence software projects. Much recent research calls into question  the ``established wisdoms'' of SE field. 
 
-
-%Note that if the reader disputes any of the above, then we ask how would you challenge the items on this list? Where would you get the data, from enough projects, to   successfully refute the above? And where would you get that data? And how would you draw conclusions from that large set? Note that the answers to these questions requires learning from multiple projects. Hence, this paper.
 
 \textbf{(c) Imported data can be more useful than local data:} Another benefit of  importing data from other projects is that, sometimes, that imported data can be better than the local information. Rees-Jones reports in one study that while building predictors
-for Github close time  for open source projects~\cite{rees2017better} using data from other projects performs much better then building models using {\em local learning} (because there is better  information {\em there} than {\em here}).
+for Github close time  for open source projects~\cite{rees2017better} using data from other projects performs much better than building models using {\em local learning} (because there is better  information {\em there} than {\em here}).
 
 
-\textbf{(d) When there is insufficient local data, learning from other projects is very useful:} When developing new software in  novel areas, it is useful to draw on the relevant  experience  from related areas with a larger experience base.This is particularly true when developers are doing something that is novel to them, but has been widely applied elsewhere, Clark and Madachy~\cite{clark15} discuss 65 types of software they see        under-development by the US Defense Department in 2015.   Some of these types are very common (e.g. 22 ground-based communication systems) but other types are very rare (e.g. only  one avionics communication system). (e.g. workers on   flight avionics   might check for lessons learned from ground-based communications). Developers  working in an uncommon area (e.g. avionics communications) might want to transfer in lessons from more common areas (e.g. ground-based communication).
+\textbf{(d) When there is insufficient local data, learning from other projects is very useful:} When developing new software in  novel areas, it is useful to draw on the relevant  experience  from related areas with a larger experience base. This is particularly true when developers are doing something that is novel to them but has been widely applied elsewhere, Clark and Madachy~\cite{clark15} discuss 65 types of software they see        under-development by the US Defense Department in 2015.   Some of these types are very common (e.g. 22 ground-based communication systems) but other types are very rare (e.g. only  one avionics communication system). (e.g. workers on   flight avionics   might check for knowledge  from ground-based communications). Developers  working in an uncommon area (e.g. avionics communications) might want to transfer knowledge from more common areas (e.g. ground-based communication).
 
-\subsection{ How to  Transfer Knowledge}
-This     art of moving data and/or lessons learned from one project or another is {\em Transfer Learning}. When there is insufficient current data to apply data miners to learn defect predictors, transfer learning can be used to transfer lessons learned from other source projects S to the target project T .
+\subsection{ How to  Transfer Knowledge}\label{tion:how1}
+This     art of moving data and/or knowledge  from one project or another is {\em Transfer Learning}. When there is insufficient current data to apply data miners to learn defect predictors, transfer learning can be used to transfer knowledge from other source projects S to the target project T.
 
 Initial experiments with transfer learning offered very pessimistic results. Zimmermann et al.~\cite{zimmermann2009cross} tried to port models between two web browsers (Internet Explorer and Firefox) and found that cross-project prediction was still not consistent: a model built on Firefox was useful for Explorer, but not vice versa, even though both of them are similar applications. Turhan's initial experimental results were also very negative: given data from 10 projects, training on S = 9 source projects and testing on T = 1 target projects resulted in alarmingly high false positive rates (60\% or more). 
 
@@ -695,28 +553,34 @@ Subsequent research realized that data had to be carefully sub-sampled and possi
 \ei
 Another way to divide transfer learning is the approach that is followed. There are  2 approaches that are frequently used in many research: {\bf similarity-based approaches} and {\bf dimensional transforms}.
 
- \textbf{Similarity-Based Approaches:} In this approach we can transfer some/all subset of the rows or columns of data from source to target. The Burak filter~\cite{turhan09} builds its training sets by finding the k = 10 nearest code modules in S for every $ t \in T $. However, the Burak filter suffered from the all too common instability problem (here, whenever the source or target is updated, data miners will learn a new model since different code modules will satisfy the k = 10 nearest neighbor criteria). Other researchers ~\cite{kocaguneli2012, kocaguneli2011find} doubted that a fixed value of k was appropriate for all data. That work recursively bi-clustered the source data, then pruned the cluster sub-trees with greatest ``variance'' (where the ``variance'' of a sub-tree is the variance of the conclusions in its leaves). This method combined row selection with row pruning (of nearby rows with large variance). Other similarity methods~\cite{Zhang16aa} combine domain knowledge with automatic processing: e.g. data is partitioned using engineering judgment before automatic tools cluster the data. To address variations of software metrics between different projects, the original metric values were discretized by rank transformation according to similar degree of context factors.
+ \textbf{Similarity-Based Approaches:} In this approach, we can transfer some/all subset of the rows or columns of data from source to target. The Burak filter~\cite{turhan09} builds its training sets by finding the k = 10 nearest code modules in S for every $ t \in T $. However, the Burak filter suffered from the all too common instability problem (here, whenever the source or target is updated, data miners will learn a new model since different code modules will satisfy the k = 10 nearest neighbor criteria). 
+
     
 \textbf{Dimensional Transformation:} In this approach we manipulate the raw source data until it matches the target. An initial attempt on performing transfer learning with Dimensionality transform was undertaken by Ma et al.~\cite{Ma2012} with an algorithm called transfer naive Bayes (TNB). This algorithm used information from all of the suitable attributes in the training data. Based on the estimated distribution of the target data, this method transferred the source information to weight instances the training data. The defect prediction model was constructed using these weighted training data. Nam et al.~\cite{Nam13} originally proposed a transform-based method that used TCA based dimensionality rotation, expansion, and contraction to align the source dimensions to the target. They also proposed a new approach called TCA+, which selected suitable normalization options for TCA, When there are no overlapping attributes (in heterogeneous transfer learning) Nam et al.~\cite{Nam2015} found they could dispense with the optimizer in TCA+ by combining feature selection on the source/target following by a Kolmogorov-Smirnov test to find associated subsets of columns. Other researchers take a similar approach, they prefer instead a canonical-correlation analysis (CCA) to find the relationships between variables in the source and target data~\cite{jing2015heterogeneous}.
 
-
+\textbf{The Bellwether Method:}
 Considering all the attempts at transfer learning sampled above, suggested a surprising lack of consistency in the choice of source datasets, learning methods, and statistical measures while reporting results of transfer learning. This issue was addressed by ``Bellwether'' suggested by Krishna et al. ~\cite{krishna2017simpler,krishna16}. which is a simple transfer learning technique is defined in 2- folds namely the Bellwether effect and the Bellwether method:
 
 \bi
 
     \item \textbf{The Bellwether effect} states that, when a community works on multiple software projects,  then there exists one exemplary project, called the bellwether, which can define predictors for the others.
     
-    \item \textbf{The Bellwether method} is where we search for the exemplar bellwether project and construct a transfer learner with it. This transfer learner is then used to predict for effects in future data for that community.
+    \item \textbf{The Bellwether method} is where we search for the exemplar bellwether project and construct a transfer learner with it. This transfer learner is then used to predict for defects in future data for that community.
 
 \ei
 
-In their paper Krishna et al. performed experiment with communities of 3, 5 and 10 projects in each, and showed that (a)~bellwethers are not rare, (b)~their prediction performance is better than local learning, and (c)~they do fairly well when compared with 
+In their paper, Krishna et al. performed experiments with communities of 3, 5 and 10 projects in each, and showed that (a)~bellwethers are not rare, (b)~their prediction performance is better than local learning, and (c)~they do fairly well when compared with 
 the state-of-the-art transfer learning methods discussed above.
 %and with selection of bellwether shows a consistency for choice of source dataset for transfer learning. 
 This motivated us to use  bellwethers as our choice of method for transfer learning to search for generality in SE datasets. 
 
-That said,  Krishna et al. warn that in order to find bellwether we need to do a $ N*(N-1) $ comparison; i.e. standard bellwethers
-have complexity $ O(N^2) $ (N being the number of projects in community). 
+There are two drawbacks with bellwethers, as seen in prior work.
+Firstly, that prior work assumes that one bellwether will work for many projects. While such a solo-bellwether approach worked well
+in studies over five to 20 projects, we show below that hundreds of projects might actually require more than one bellwether.
+
+Secondly, standard bellwether algorithms are   slow.
+ Krishna et al. warn that in order to find bellwether we need to do a $ N*(N-1) $ comparison; i.e. standard bellwethers
+have complexity $ O(N^2) $ (N being the number of projects in the community). 
 
 \begin{equation}
 \label{eq:bellwether}
@@ -733,9 +597,9 @@ The goal of this paper is to find ways to reduce the Equation~\ref{eq:bellwether
 % \label{sec:Metric Extraction}
 \label{GENERAL}
 
-\begin{figure}[!t]
+\begin{figure}[!b]
     \small
-     \begin{lstlisting}[mathescape,numbers=left,frame=None]
+     \begin{lstlisting}[mathescape,numbers=right,frame=None]
         def General(project):
             # getting feature vectors for each project
             # complexity is O(N)
@@ -759,13 +623,13 @@ The goal of this paper is to find ways to reduce the Equation~\ref{eq:bellwether
 
             \end{lstlisting} 
             \vspace{-0.2cm}
-            \caption{Pseudo-code of GENERAL}
+            \caption{Pseudo-code of GENERAL. Unlike traditional bellwethers (that require an $O(N^2)$ analysis of all pairs of $N$ projects, GENERAL first hierarchically generates a tree of  clusters with $m$ leaves. It  then reasons  within each cluster. This means  that GENERAL's complexity is $O(m*(N/m)^2)$.}
             \label{fig:Pseudo-code} 
             \vspace{-0.3cm}
 \end{figure}
 
  
- Our proposed improvement to bellwethers is called GENERAL. The core intuition of this new approach is that if many projects are similar, then we do not need to run comparisons between all pairs of projects.\respto{1-1b}{\color{blue}
+ Our proposed improvement to the existing bellwether method is called GENERAL. The core intuition of this new approach is that if many projects are similar, then we do not need to run comparisons between all pairs of projects.\respto{1-1b}{\color{blue}
    We came to this
 intuition based on the writing
 of    Devanbu
@@ -788,7 +652,7 @@ exist, then we   exploit symmetries between different projects in order to learn
  on all others in that leaf cluster.
  This step needs
   a {\bf data mining} algorithm to generate models (see \S\ref{sec:dm})
- and  a comparison method to {\bf select the best model} (see \S\ref{sec:best}). Here if we analyze an average case where $N$ projects is divided into $m$ clusters equally, then each cluster has a complexity of $O((N/m)^2)$ and the total complexity is $O(m*(N/m)^2)$ as there are $m$ clusters.
+ and  a comparison method to {\bf select the best model} (see \S\ref{sec:best}). Here if we analyze an average case scenario where $N$ projects are divided into $m$ clusters equally, then each cluster has a complexity of $O((N/m)^2)$ and the total complexity is $O(m*(N/m)^2)$ as there are $m$ clusters.
  \item  Once bellwether from each group is  pushed up the tree, each super-groups only has projects selected as bellwether from step 5 then steps 4,5 are repeated,
  recursively.
  \item The project pushed to the root of the tree is then used as  the bellwether for all the projects.
@@ -803,25 +667,33 @@ exist, then we   exploit symmetries between different projects in order to learn
 {\color{blue}
  Comparing the computational cost of Equation~\ref{eq:GENERAL} with Equation~\ref{eq:bellwether}, we can say the $O(m*(N/m)^2)$ analysis is inherently more scalable than the $O(N^2)$ analysis required by standard bellwether as m increases.}
  
-To operationalize steps 1,2,3,4,5,6,7 listed above, we need to make some lower-level engineering decisions. The rest of this section documents those decisions.
+To operationalize steps 1,2,3,4,5,6,7 listed above, we need to make some lower-level engineering decisions about:
+\bi
+\item Feature extraction;
+\item Hierarchical clustering;
+\item Data mining;
+\item Evaluation criteria;
+\item Selecting the best model.
+\ei
+The rest of this section documents those decisions.
 
 \subsection{Feature Extraction}
 \label{sec:fx}
 
-Prior to anything else, we must summarize our projects.  Xenos \cite{Xenos} distinguishes
+Prior to anything else, we must summarize our projects as a set of metrics. Xenos \cite{Xenos} distinguishes
 between {\em product metrics} (e.g.  counts of lines
 of code );  and  {\em process metrics} 
-about the  development process (e.g.    number of file revisions).
- \respto{2-18}{\color{blue} Using the   Understand tool~\cite{visualize},
-we calculated different variations (i.e. average, max etc.) of 21 product and 5 process metrics, with a total 66 attributes/columns to build defect prediction models
+about the  development process (e.g.    number of file revisions). Product metrics are properties of the code such as size, complexity, design features collected by analyzing the code, while the process metrics are properties of revision history of files collected by analyzing git history.
+ \respto{2-18}{\color{blue} Here using the   Understand tool~\cite{visualize},
+we calculated different variations (i.e. average, max, etc.) of 21 product and 5 process metrics, with a total of 66 attributes/columns to build defect prediction models
  (see Table~\ref{tbl:metric}).
-These product  metrics are
- calculated from snapshots of the projects from 6 months back of the last commit. The process metrics are computed using the change history in the six-months period before the split date via manual collection of data using scripts.} The data collected for this project is summarized in \fig{lang_projects}
- and \fig{meta}.
+ The Understand tool is  widely used   in software analytics~\cite{Zhang16aa,gizas2012comparative,fontana2011experience,orru2015curated,pattison2008talk,malloy2002testing}.
+Using that tool, our product  metrics are
+ calculated from snapshots of the projects from 6 months back of the last commit. Also, our process metrics are computed using the change history in the six-months period before the split date via manual collection of data using scripts.} The data collected for this project is summarized in \fig{lang_projects}  and \fig{meta}. Using the metrics (process and product) collected for each project we use Hall's CFS feature selector~\cite{hall1999correlation} to summarize the projects into feature vectors for the next phase of the algorithm.
  
-\begin{figure}[!b]
+\begin{figure}[!t]
 \centering
-{\small \renewcommand{\baselinestretch}{0.7}
+{\scriptsize \renewcommand{\baselinestretch}{0.7}
 \begin{tabular}{rrl}
     \textbf{Language} & \textbf{Projects} & \\
     Java & 290 &\crule{41.6pt}{8pt} \\
@@ -832,24 +704,22 @@ These product  metrics are
      & 
 \end{tabular}}
 \caption{Distribution of projects depending on languages.
-Many  projects use combinations of languages to
-achieve their results. Here, we show majority language used in each project.}
+Many  projects use combinations of languages so  we show the majority language of  each project.}
 \label{fig:lang_projects}
 \end{figure}
 
-\begin{figure*}[!h]
-    \centering
-    \includegraphics[width=.8\linewidth]{figs/meta.pdf}
-    \caption{Distribution of projects depending on Defect Percentage, Data set Size, Lines of Code and Number of Files.}
+\begin{figure}[!t]
+\vspace{-15mm}
+    \includegraphics[angle=270,width=\linewidth]{figs/meta.pdf}
+    \vspace{-15mm}
+    \caption{Distribution of projects depending on Defect Percentage, Data set Size, Lines of Code and Number of Files.} 
     \label{fig:meta}
-\end{figure*}
-
-
-Understand is a widely used tool in software analytics~\cite{Zhang16aa,gizas2012comparative,fontana2011experience,orru2015curated,pattison2008talk,malloy2002testing}.
- The advantage of using this tool is that much of the tooling needed for this kind of large scale analysis is already available. On the other hand, it also means that we can only reason about the features that Understand can report-- which could be  a threat to the validity of the conclusions reached. As shown below, the Table~\ref{tbl:metric} metrics were shown to be effective for our task. Nevertheless, in future work, this study needs to be repeated whenever new tools allow for the widespread collection of different kinds of features.
+\end{figure}
+ 
  
 \begin{table}[!t]
  
+~\\
 
 \scriptsize
 \begin{tabular}{|p{1cm}|c|l|p{3cm}|}
@@ -885,7 +755,8 @@ Understand is a widely used tool in software analytics~\cite{Zhang16aa,gizas2012
 \caption{List of software metrics used in this study.}
 \label{tbl:metric}
 \end{table}
-\subsection{Hierarchical Clustering}\label{sec:hc}
+\subsection{Hierarchical Clustering}
+\label{sec:hc}
 
  After data collection, comes  the  hierarchical clustering needed for step 2.
 For this purpose, we followed the
@@ -908,22 +779,39 @@ The bellwether analysis of step3 requires a working data miner framework. Three 
 that require  neural nets or ensembles. 
 \item Since some projects have relatively few defects, before learning, 
 some {\em over-sampling} is required to increase the number of defective examples in the training sets.
-\item Since one of our research questions ({\bf RQ6}) asks ``what did we learn from all these projects'', we needed a learning method that generate succinct models. Accordingly, we used {\em feature selection}  to check which subset of Table~\ref{tbl:metric}
+\item Since one of our motivation is to asks ``what did we learn from all these projects'', we needed a learning method that generates succinct models. Accordingly, we used {\em feature selection}  to check which subset of Table~\ref{tbl:metric}
 mattered the most.
 \ei
 In this study, we used:
 \bi
 \item
-The logistic regression learner, \respto{1-5a} {\color{blue} since it is widely used in defect prediction~\cite{ghotra2015revisiting,XXX} in the software engineering domain and, in our experience,
-in runs much faster (in terms of model building time) than many other learners such as Support Vector Machine, Random Forest, Artificial Neural Nets etc. (when tested on defect prediction).~\cite{ghotra2015revisiting};}
+Logistic regression;
 \item
-The SMOTE class imbalance correction algorithm\footnote{  The SMOTE Synthetic Minority Over-Sampling Technique algorithms sub-samples the majority class (i.e., deletes examples) while over-sampling the minority class until all classes have the same frequency. To over-sample, new examples are synthesized extrapolating between known examples (of the minority class) and its $k$ nearest neighbors.}~\cite{Chawla2002}, \respto{1-5b} {\color{blue} since many of the projects have relatively very few or large number of defects. A model build on project with such skewed class distribution can result in a biased model towards the majority class (Such models can either have low recall or high recall with high pf). Thus we run SMOTE~\cite{tan2015online,wang2013using,sun2012using,khoshgoftaar2010attribute} on the training data\footnote{While it is useful
+The SMOTE class imbalance correction algorithm;
+\item
+And Hall's CFS feature selector. 
+\ei
+We selected these tools
+since   in the domain of software analytics,
+the use of LR (logistic regression) and SMOTE
+is endorsed by recent ICSE papers~\cite{Rahman:2013,ghotra2015revisiting,agrawal17}.
+As to CFS, we found that without it, our recalls were very low (less than 20\%).
+Also,   extensive studies have found that CFS more useful than many other feature subset selection methods such as  PCA or InfoGain or RELIEF\respto{1-5e} {\color{blue}~\cite{hall1999correlation,challagulla2008empirical,arar2015software,lee2016developer,rodriguez2007attribute,gao2015combining,hosni2017investigating}. }
+The rest of this sub-section offers some low-level notes
+on each tool.
+
+Logistic regression  \respto{1-5a} {\color{blue}  is widely used in defect prediction~\cite{ghotra2015revisiting,zhang2017data,he2012investigation,nam2013transfer,pan2010domain} in the software engineering domain and, in our experience,
+it runs much faster (in terms of model building time) than many other learners such as Support Vector Machine, Random Forest, Artificial Neural Nets etc, (when tested on defect prediction).}
+
+\respto{1-5b} {\color{blue} The SMOTE class imbalance correction algorithm sub-samples the majority class (i.e., deletes examples) while over-sampling the minority class until all classes have the same frequency. To over-sample, new examples are synthesized extrapolating between known examples (of the minority class) and its $k$ nearest neighbors~\cite{Chawla2002}.
+We use SMOTE since many of the projects have relatively very few or large number of defects. A model built on a project with such skewed class distribution can result in a biased model towards the majority class (Such models can either have a low recall or high recall with high pf). Thus we run SMOTE~\cite{tan2015online,wang2013using,sun2012using,khoshgoftaar2010attribute} on the training data\footnote{Technical aside: While it is useful
   to artificially boost the number of target examples
 in the training data~\cite{Chawla2002,Pelayo2007,mensah2017investigating}, it is a methodological error to also change the distributions in   the test data~\cite{agrawal17}. Hence, for our work,
-we take care to {\em only} resample the training data.} to artificially boost the number of target examples in the training data and achieving balanced recall and pf for the minority class test examples};
-\item
-Hall's
-CFS feature selector~\cite{hall1999correlation}\footnote{CFS  is based on the heuristic
+we take care to {\em only} resample the training data.}}.
+
+\respto{1-5c} {\color{blue} Hall's
+CFS feature selector~\cite{hall1999correlation} 
+is based on the heuristic
 that ``good feature subsets contain features highly correlated with the classification, yet uncorrelated to each other''. Using this heuristic,
 CFS performs a best-first search  to discover interesting sets of features.
 Each subset is  scored via
@@ -936,14 +824,9 @@ set to the class;
 and $r_{\mathit{ff}}$ is the mean score of the feature to feature
 connection between the items in $s$.
 Note that for this to be maximal, $r_{\mathit{cf}}$  must be large
-and $r_{\mathit{ff}}$ must be small. That is, features have to connect more to the class than each other.}, \respto{1-5c} {\color{blue} to identify features which are highly correlated with the classification, yet uncorrelated to each other. The features which are  highly correlated with each other will not add more information while making classification, while the features which are uncorrelated towards the classification also not add more information while making classification. The CFS algorithm incrementally picks one feature at a time which adds the most information towards the classification at a given step and stops when there is no more improvement in the score (see footnote 4). }
-\ei
-We selected  use these tools
-since   in the domain of software analytics,
-the use of LR (logistic regression) and SMOTE
-is endorsed by recent ICSE papers~\cite{Rahman:2013,ghotra2015revisiting,agrawal17}.
-As to CFS, we found that without it, our recalls were very low (less than 20\%).
-Also,   extensive studies have found that CFS more useful than many other feature subset selection methods such as  PCA or InfoGain or RELIEF\respto{1-5e} {\color{blue}~\cite{hall1999correlation,challagulla2008empirical,arar2015software,lee2016developer,rodriguez2007attribute,gao2015combining,hosni2017investigating}. }
+and $r_{\mathit{ff}}$ must be small (that is, features have to connect more to the class than each other). We use CFS  to identify features that are highly correlated with the classification, yet uncorrelated to each other. The features which are  highly correlated with each other will not add more information while making classification, while the features which are uncorrelated towards the classification also not add more information while making classification.  Our  CFS   incrementally picks one feature at a time, stopping when there is no more improvement in the score. }
+
+
 
 
 
@@ -952,17 +835,19 @@ Also,   extensive studies have found that CFS more useful than many other featur
 \label{sec:Measures}
 
 In this section, we introduce the following 5 evaluation measures used in this study to evaluate the performance of machine learning models. Suppose we have a dataset with M changes and N defects. After inspecting 20\% LOC, we inspected $m$ changes and found $n$ defects. Also, when we find the first defective change, we have inspected k changes. Using
-this data, we can define 5 evaluation measures  as follows:
+this data, we can define 5 evaluation measures  as follows.
+
+
 {\color{blue}\respto{1-5f} 
-(1) \textbf{Recall:} This is the proportion of inspected defective changes among all the actual defective changes; i.e. $n/N$. This implicates in an ideal scenario where we identify all the actual target class as target class without missing the recall will be one. When recall is maximal, we are finding all  the target class. Recall is used in  many previous studies~\cite{kamei2012large,yang2016effort,yang2017tlel,xia2016collective,yang2015deep}.  
+(1) \textbf{Recall:} This is the proportion of inspected defective changes among all the actual defective changes; i.e. $n/N$. This implicates in an ideal scenario where we identify all the actual target class as the target class without missing the recall will be one. When recall is maximal, we are finding all  the target class. Recall is used in  many previous studies~\cite{kamei2012large,yang2016effort,yang2017tlel,xia2016collective,yang2015deep}.  
 
-(2) \textbf{Precision:} This is the proportion of inspected defective changes among all the inspected changes; i.e. $n/m$. A low Precision indicates that developers would encounter more false alarms, which may have negative impact on developers' confidence on the prediction model. When precision is maximal, all the reports of defect modules are actually buggy (so the users waste no time looking at results that do not matter to them)
+(2) \textbf{Precision:} This is the proportion of inspected defective changes among all the inspected changes; i.e. $n/m$. A low Precision indicates that developers would encounter more false alarms, which may have a negative impact on developers' confidence in the prediction model. When precision is maximal, all the reports of defect modules are actually buggy (so the users waste no time looking at results that do not matter to them)
 
-(3) \textbf{pf:} This is the proportion of all suggested defective changes which are not actual defective changes among all the suggested defective changes. A high {\em pf} suggests developers will encounter more false alarms which may have negative impact on developers' confidence in the prediction model.
+(3) \textbf{Pf:} This is the proportion of all suggested defective changes which are not actual defective changes among all the suggested defective changes. A high {\em pf} suggests developers will encounter more false alarms which may have a negative impact on developers' confidence in the prediction model.
 
-(4) \textbf{popt20:} This is the proportion number of suggested defective changes among all suggested defective changes, when when 20\% LOC modified by all changes are inspected. A high {\em popt20} values mean that developers can find most bugs in a small percent of the code, thus effectively reducing the effort required to find bugs. To compute Popt20, we divided the test set into the modules predicted to be faulty (set1) and predicted to be bug-free (set2). Each set was then sorted in ascending order by lines of code.  We then ran down set1, then set2, till 20\% of the total lines of code were reached-- at which point {\em popt20} is the percent of buggy modules seen up to that point.
+(4) \textbf{Popt20:} This is the proportion number of suggested defective changes among all suggested defective changes, when 20\% LOC modified by all changes are inspected. A high {\em popt20} values mean that developers can find most bugs in a small percent of the code, thus effectively reducing the effort required to find bugs. To compute Popt20, we divided the test set into the modules predicted to be faulty (set1) and predicted to be bug-free (set2). Each set was then sorted in ascending order by lines of code.  We then ran down set1, then set2, till 20\% of the total lines of code was reached-- at which point {\em popt20} is the percent of buggy modules seen up to that point.
 
-(5) \textbf{ifa\_auc:} Number of  initial false alarms encountered before we find the first defect. Inspired by previous studies on fault localization~\cite{parnin2011automated, kochhar2016practitioners, xia2016automated}, we caution that if the top-k changes recommended by the model are all false alarms, developers would be frustrated and are not likely to continue inspecting the other changes. Parnin and Orso ~\cite{parnin2011automated} found that developers would stop inspecting suspicious statements, and turn back to traditional debugging, if they could not get promising results within the first few statements they inspect. Using the nomenclature reported about {\em ifa$=k$}.  In this study we use a modified version of {\em ifa} called ifa\_auc, which calculates {\em ifa} based on efforts spent on inspecting the code. We use gradually increment the efforts spent by increasing the total LOC inspected and calculate ifa on each iteration to get the area under the curve (auc), here the x-axis is the percentage of effort spent on inspection and y-axis is {\em ifa}.}
+(5) \textbf{Ifa\_auc:} Number of  initial false alarms encountered before we find the first defect. Inspired by previous studies on fault localization~\cite{parnin2011automated, kochhar2016practitioners, xia2016automated}, we caution that if the top-k changes recommended by the model are all false alarms, developers would be frustrated and are not likely to continue inspecting the other changes. Parnin and Orso ~\cite{parnin2011automated} found that developers would stop inspecting suspicious statements, and turn back to traditional debugging if they could not get promising results within the first few statements they inspect. Using the nomenclature reported about {\em ifa$=k$}.  In this study, we use a modified version of {\em ifa} called ifa\_auc, which calculates {\em ifa} based on efforts spent on inspecting the code. We use gradually increment the efforts spent by increasing the total LOC inspected and calculate ifa on each iteration to get the area under the curve (auc), here the x-axis is the percentage of effort spent on inspection and y-axis is {\em ifa}.}
 
 
 \subsection{Select the Best Model}\label{sec:best}
@@ -988,104 +873,29 @@ we seek to maximize goal $x_j$.
 
 An alternative to the Zitler indicator is    `boolean domination '' that says one thing is better than another it if it no worse on any criteria and better on at least one criteria. We prefer Equation~\ref{eq:cdom} to boolean domination since we have a   3-goal optimization problem and it it is known that boolean domination often  fails for 2 or more goals~\cite{Wagner:2007,Sayyad:2013}. 
  
-{\color{blue}\respto{1-5f} As discussed above, model performance can be scored and the best model can be chosen by researchers based on their choice of metrics. In this experiment we score model performance according to the goals mentioned in \S\ref{sec:Measures}. Here when assessing models, we  chose the best model that:}
-% \bi
-% \item {\color{blue}Recall is the ratio between predicted actual target class examples vs all target class examples; i.e.  $ \frac{TP}{TP+FN} $, which means in an ideal scenario where we identify all the actual target class as target class without missing the recall will be one. 
-% When recall is maximal, we are finding all  the target class.}
-% \item  {\color{blue} Precision is the ratio between predicted actual target class examples vs all predicted target class examples; i.e. $ \frac{TP}{TP+FP} $. When precision is maximal, all the reports of defect modules are
-% actually buggy (so the users waste no time looking at results that do not matter to them).}
-% \item {\color{blue}popt(20) is a cost sensitive productivity based metric, which represents the percentage of total defect identified by reading 20\% of the code. This means more defects we can identify by reading only 20\% of the code is better for the developers to localize and fix the defects.}
-% \item {\color{blue}ifa\_auc  is  XXX.}
-% \ei
+{\color{blue}\respto{1-5g} As discussed above, model performance can be scored and the best model can be chosen by researchers based on their choice of metrics. In this experiment, we score model performance according to the goals mentioned in \S\ref{sec:Measures}. Here when assessing models, we  chose the best model that:}
+
 \bi
 \item
 {\color{blue}Maximize
 recall and precision and popt(20)}
 \item {\color{blue} Minimizes false alarm and ifa\_auc.}
 \ei
-% In such   {\em multi-objective} problems, one model is better than another if it
-%  satisfies a ``domination predicate''.
-%  We use the Zitler indicator dominance
-%  predictor~\cite{zit02} to select our bellwether (since this is known to select better models
-%  for 5-goal optimization~\cite{Sayyad:2013,Sayyad:2013:SPL}).
-% This predicate favors model
-%   $y$ over $x$  model if $x$ ``losses'' most:
-% \begin{equation}\label{eq:cdom}
-% \begin{array}{rcl}
-% \textit{worse}(x,y)& =& \textit{loss}(x,y) > \textit{loss}(y,x)\\
-% \textit{loss}(x,y)& = &\sum_j^n -e^{\Delta(j,x,y,n)}/n\\
-% \Delta(j,x,y,n) & = & w_j(o_{j,x}  - o_{j,y})/n
-% \end{array}
-% \end{equation}
-% where  ``$n$'' is the number of objectives (for us, $n=5$) and $w_j\in \{-1,1\}$ depending on whether
-% we seek to maximize goal $x_j$.  
-
-% An alternative to the Zitler indicator is    `boolean domination ''
-%  that says one thing is better than another it if it no worse on any criteria and better on at least one criteria. We prefer Equation~\ref{eq:cdom} to boolean domination since we
-%  have a   5-goal optimization problem and it it is known that boolean domination often  fails for 3 or more goals~\cite{Wagner:2007,Sayyad:2013}. 
- 
-
-% The above equation is actually Pearson's correlation  where
-% all variables have been standardized.  To be applied
-% for discrete class learning (as done by KDP and this paper),
-% Hall et al. employ the Fayyad Irani discretizer~\cite{FayIra93Multi} then apply the following
-% entropy-based measure to infer $r$ (the degree of associations
-% between  discrete sets $X$ and $Y$):
-
-% \begin{equation}\label{eq:cfs}
-% r_{\mathit{xy}}=2\times \left[ \frac{H(x) + H(y) - H(x,y)}{H(y)+H(x)} \right]
-% \end{equation}
-% where $H$ is the standard information gain measure used in 
-% decision tree learning.
-% \lstset{language=Python}
-% \lstset{frame=lines} 
-% \lstset{label={lst:code_direct}}
-% \lstset{basicstyle=\footnotesize}
-% \begin{center}\begin{minipage}{2.5in}\begin{lstlisting}
-% def CFS(data):
-%   features = []
-%   score = -1
-%   while True:
-%     best = None
-%     for feature in range(data.features):
-%       features += [feature]
-%       tmp = merit( data, features) # see above equation
-%       if tmp > score:
-%         score = tmp
-%         bests = features
-%       features.pop()
-%     features += bests
-%     if not improve(score): break
-%   return features
-% \end{lstlisting}
-% \end{minipage}\end{center}
-% \end{figure}
 
 
-%  This algorithm works is  works in 6 stages.
-
-%     (1) \textbf{Feature Extraction:} In this stage the whole dataset is used to extract features from each project. This is done using the FSS algorithm as shown in~\ref{subsec:FSS}. Here each project is sent to the FSS and the FSS returns most suitable features for building models, we do this for every project and that information as a vector (i.e. a vector or length equal to total number of features, where 0,1 represents a feature being absent,selected) that represents each project. By performing this we have a vector representation of each project in the dataset. GENERAL uses this information to create the hierarchical clusters to find the communities. We perceive this is a good representation of community, as in this work we try to find community which has similar information distribution according to the attributes. Thus 2 projects with similar features selected have much higher chance of building similar models.
-    
-%     (2) \textbf{Cluster Creation:} After the feature extraction has been done, the data is sent to a modified BIRCH algorithm. The algorithm requires a branching factor (i.e. Maximum number of CF sub-clusters in each node) and threshold value (i.e. when to form a new cluster based on radius). For this experiment we have set the branching factor as 20 and threshold value as 0.5. Using this version of BIRCH algorithm we build the hierarchical cluster, while storing all necessary details about the cluster like parent-child node, data points, level information, etc. This stage returns a Clustering Feature Tree (CF Tree) with all this information, which is passed to the next phase of experiment. 
-    
-%     (3) \textbf{Bellwether selection phase 1:} The CF Tree from the last phase is passed to the hierarchical bellwether. In this phase we use \textit{bellwether method} to identify bellwether at the leaf level. Using the CF Tree, we identify the clusters at the leaf level where each cluster represents the smallest community produced by the BIRCH algorithm in the last phase. Here we use the default ``Bellwether'' to perform a $ N*(N-1) $ comparison at each cluster. Here we select each project in the cluster one by one as a source dataset for transfer learning apply SMOTE as mentioned in sec~\ref{subsec:SMOTE} to handle any data imbalance and then use the FSS algorithm to get rid of any unnecessary attributes as mentioned in sec~\ref{subsec:FSS}. This informative and balanced dataset is used to build a LR model as mentioned in sec~\ref{subsec:LR} and we measure the performance of all other projects in the community (cluster). The performance measures that are used are mentioned in sec~\ref{sec:Measures}. To find the bellwether in each community we use cdom function to find the best source dataset among each cluster considering all performance measures. This phase returns a bellwether for each cluster at the leaf level of the CF Tree.
-    
-%     (4) \textbf{Bellwether promotion:} In this phase of the algorithm is an iterative process, here we receive the selected bellwethers from the child clusters of each cluster in the level. This is called the bellwether promotion. Here each parent cluster instead of being represented by all projects within them, they are represented by only the bellwethers in them.  
-    
-%     (5) \textbf{Bellwether selection phase 2:} In this phase instead of finding a bellwether for each cluster at the level by performing a $ N*(N-1) $ comparison, we select the projects which represented as bellwether at the child nodes and then try to find a bellwether among them. So at each cluster at the level we perform a $ M*(M-1) $ comparison at each cluster where M is the selected bellwether from child clusters. This creates an order of magnitude faster \textbf{bellwether method}. This is again an iterative process, and the end of all the iterations, we will have a bellwether at each cluster at every level. 
-    
-%     (6) \textbf{Bellwether Prediction:} This is the transfer learning phase, when a new project is evaluated, we will use the FSS algorithm to get its features, then use the feature vectors to identify which cluster it belongs and use that cluster's bellwether as the transfer learning model.
-
-To Summarize, the algorithm works as follows -
+{\color{blue}
+\noindent
+To summarize, the algorithm works as follows -
 \bi
 \item The feature extraction algorithm extracts feature vectors for each project.
-\item A hierarchical clustering algorithm BIRCH, uses the feature vectors for each project as representative for the project to create a hierarchical cluster. This returns a clustering tree, which includes information regarding which projects are in a certain cluster, each clusters child clusters and parent clusters.
-\item Use the clustering tree to find clusters in leaf level of the tree, to run a all pair comparison within each cluster to select a best model aka ``Bellwether''. 
+\item A hierarchical clustering algorithm BIRCH, uses the feature vectors for each project as representative for the project to create a hierarchical cluster. This returns a clustering tree, which includes information regarding which projects are in a certain cluster, each cluster's child clusters and parent cluster.
+\item Use the clustering tree to find clusters in leaf level of the tree, to run an all pair comparison within each cluster to select a best model aka ``Bellwether''. 
 \item We push up and store the bellwether found at leaf level to its parents.
-\item On the parent clusters we find the best models pushed from child nodes to run a all pair comparison between them to find the ``Bellwether'' in the parent clusters.
+\item On the parent clusters, we find the best models pushed from child nodes to run an all pair comparison between them to find the ``Bellwether'' in the parent clusters.
 \item We repeat the last 2 steps until we reach the root node.
 \item When we predict defects for a new project, we first check which cluster in each level it should belong to based on the BIRCH algorithm and then we predict the new project using that cluster's ``Bellwether'' at each level.
 \ei
+}
 
 \section{Experimental Methods}
 \label{sec:Data Collection}
@@ -1120,7 +930,7 @@ trivially small or are about  non-software development projects. Zhang et al. cl
   \item \textbf{Avoid projects with a small number of commits:} Zhang et al. removed any projects with less than 32 commits (which is the 25 \% quantile of the number of commits as the threshold). 
  
     
-    \item \textbf{Avoid projects with lifespan less than one year:} Zhang et al. filtered out any  projects with a lifespan less than one year.  
+    \item \textbf{Avoid projects with a lifespan of less than one year:} Zhang et al. filtered out any  projects with a lifespan of less than one year.  
     
     \item \textbf{Avoid projects with limited defect data:} Zhang et al. in their study counted the number of fix-inducing and non-fixing commits from a one-year period and removed any projects with 75 \% quantile of the number of fix-inducing and non-fixing commits.  
     
@@ -1137,7 +947,7 @@ On top of that, we also applied two more filters:
     We pruned  projects which did not  have enough fix-inducing vs non-fixing data points to create a stratified k=5 fold cross-validation/% an 
     
 \ei
-These filters resulted in a training set of   697 projects\footnote{\href{http://tiny.cc/bellwether_data}{http://tiny.cc/bellwether\_data}}. Fig~\ref{fig:meta} and fig~\ref{fig:lang_projects} shows the Distribution of projects depending on defect percentage, data set size, lines of code, number of files and project languages to confirm the projects selected comes from wide verity and representative of a software community. 
+These filters resulted in a training set of   697 projects\footnote{\href{http://tiny.cc/general\_data}{http://tiny.cc/general\_data}}. Fig~\ref{fig:meta} and fig~\ref{fig:lang_projects} shows the Distribution of projects depending on defect percentage, data set size, lines of code, number of files and project languages to confirm the projects selected comes from wide verity and representative of a software community. 
 From these selected projects, the data was labeled using issue tracking system and commit messages. If a project used issue tracking system for maintaining issue/defect history the data was labeled using that. Like  Zhang et al., we found that nearly half  of the projects did not use an issue tracking system. For these projects, labels were created analyzing commit messages by tagging them as fix-inducing commit if commit message matches the following regular expression
 
 \begin{center}
@@ -1157,11 +967,11 @@ From these selected projects, the data was labeled using issue tracking system a
  \bi
  \item
  Projects were divided
- randomly into train\_1 and test\_1 as a 90:10 split.
+ randomly into train\_1 and test\_1 as a 90:10 split (from a total of 697 projects, 627 projects are for train\_1 and remaining 70 for test\_1).
  \item
- The projects in train\_1 were used to find the bellwether .
+ The projects in train\_1 were used to find the bellwether.
  \item
- Each   project in test\_1 was  then divide into train\_2 and test\_2 (using a 2:1 split).
+ Each   project in test\_1 was  then divided into train\_2 and test\_2 (using a 2:1 split).
  \item
  LR and feature selection and SMOTE were then used
  to build two models: one from the train\_1 bellwether and one from the train\_2
@@ -1174,61 +984,25 @@ From these selected projects, the data was labeled using issue tracking system a
 
 
 
-% \begin{figure}[!t]
-%     \centering
-%     \includegraphics[width=\linewidth]{figs/BUBBLE.png}
-%     \caption{GENERAL algorithm.}
-%     \label{fig:GENERAL}
-% \end{figure}
 
-% In this study we try to establish the presence of generality in SE datasets. We do this by analyzing the presence of bellwether incrementally by adding more and more projects and how the bellwether's predictive power changes. In this case to show the presence of generality in SE datasets the predictive power of the bellwether should look like the \textcolor{ao(english)}{GREEN} in figure~\ref{fig:predictive_power}, that is the predictive power of bellwether should increase or remains same, if our results look like the \textcolor{red}{RED} curve, that will show absence of generality in SE datasets.
-
-% In order to achieve this, we try to explore the \textit{bellwether effect} as mentioned in ~\ref{sec:related}. We know the default \textit{bellwether method} is very expensive ($ O(N^2) $). Thus in this paper we proposes an alternative transfer learning method (GENERAL), that explores \textit{bellwether effect} by exploring an order of magnitude faster \textit{bellwether method}. Our approach has three key components:
-
-% \bi
-
-%     \item A feature extractor to find a representation of each project, which will be used for clustering the projects. 
-    
-%     \item A hierarchical clustering model to use the features extracted from previous step to build the hierarchical cluster.
-    
-%     \item A transfer learning model to identify bellwether in the hierarchical cluster.
-
-% \ei
-
-% GENERAL employs a few different algorithms to complete and compose it's 4 different components - 
-
-% \subsubsection{\textbf{Feature Subset Selection (FSS):}}
-% \label{subsec:FSS}
-% To extract features from each dataset, we use a feature selector algorithm called Feature Subset Selection(FSS)~\cite{hall1999correlation,hall1997feature}. Which is a process of identifying and removing as much irrelevant and redundant information as possible. This is achieved using a correlation based feature evolution strategy to evaluate importance of an attribute and a best first search strategy with backtracking that moves through the search space by making local changes to the current feature subset. Here if the path being explored begins to look less promising, the best first search can back-track to a more promising previous subset and continue the search from there. Given enough time, a best first search will explore the entire search space, so it uses a stopping criterion (i.e. no improvement for five consecutive attributes).
-
-% {\small 
-% \begin{figure}[]
-%     \small 
-%     \inputminted[numbersep=2pt, linenos=true, fontsize=\small]{python}{pseudocode/cfs.py}
-%     \vspace{-0.2cm}
-%     \caption{Pseudo-code of Feature Subset Selection}
-%     \label{fig:GAP_pseudocode} 
-%     \vspace{-0.3cm}
-% \end{figure}
-% } 
 
  
 \subsection{Learners}\label{mylearners}
 
-In this study, we applied the follow learners:
+In this study, we applied the following learners:
 
 %
 
 \textbf{Self:} (a.k.a. local learning). This  is the standard method used in software analytics~\cite{menzies2013software,zhang2013software}.
 In this approach, the local project data is divided into a 90\% training set (which we call  train\_2)
-and a 10\% test set (which we call test\_2). After that, some some learner builds a model from the training data
+and a 10\% test set (which we call test\_2). After that, some learner builds a model from the training data
 (using the methods of \S\ref{sec:Experimental}),
 which is then assessed on the test data.
 
 As we shall see, this approach produces competent defect predictors.
 Recalling
 the motivation of this paper: we do not
-seek   better predictor that is (say) more accurate
+seek a better predictor that is (say) more accurate
 than {\bf self}.
 That is, hierarchical bellwethers can be recommended even if they {\em 
 perform  no better  than {\bf self}}. Rather, our goal is to test if hierarchical bellwethers
@@ -1242,7 +1016,7 @@ that perform no worse than those found by other methods).
 In his textbook on ``Empirical AI", Cohen~\cite{Cohen:1995} recommends base-lining new methods against some simpler approach.
 For that purpose, we use {\bf ZeroR} learner. This learner assigns labels every test instance according to
 the majority class of the training data. Note that if anything we do performs worse that ZeroR, then there is no
-point to any of the learning technology explored in this paper.  
+point in any of the learning technology explored in this paper.  
 
  
 \textbf{Global:}  Another baseline, against which we compare our methods
@@ -1252,7 +1026,7 @@ Note that, if this learner performs best, then this  would  mean that we could r
 
 \textbf{Bellwether0:} This learner is the  $O(N^2)$ bellwether method  proposed by Krishna et al.~\cite{krishna16a}.
 What will we show is that GENERAL does better than {\bf Bellwether0} is three ways:
-(a) GENERAL is inherently more scalable; (b) GENERAL is (much) faster; and (c) GENERAL produced better predictions.
+(a) GENERAL is inherently more scalable; (b) GENERAL is (much) faster, and; (c) GENERAL produced better predictions.
 That is, our new GENERAL method is a significant improvement over the prior state-of-the-art.
 
 
@@ -1273,7 +1047,7 @@ We then apply the bellwether tagged at that leaf.
 so there is only one GENERAL\_level1  between root and leaves. For this process,
 we use the same procedure as GENERAL\_level2 but this time, we use the bellwether tagged in the {\em parent}
 cluster of the relevant leaf. Note that these level1 results come from an analysis of between 50 to 200  projects
-(depneding on the shape of the cluster tree genrated via BIRCH). 
+(depending on the shape of the cluster tree generated via BIRCH). 
 
 
 
@@ -1282,188 +1056,137 @@ In the following,  the  GENERAL\_level0 results show the performance of the mode
 
  
 \subsection{Statistical Tests}
-\label{stats}\label{eval}
+% \label{stats}
+\label{eval}
 
-When comparing the results different models in this study, we used a statistical significance test and an effect size test. Significance test is useful for detecting if two populations
-differ merely by random noise. Also, effect sizes are useful for checking that two populations differ by more than just a trivial amount. For the significance test,  we use the Scott-Knott procedure  recommended at TSE'13~\cite{mittas2013ranking} and ICSE'15~\cite{ghotra2015revisiting}. This technique recursively bi-clusters a sorted set of numbers. If any two clusters are statistically indistinguishable, Scott-Knott reports them both as one group. Scott-Knott first looks for a break in the sequence that maximizes the expected values in the difference in the means before and after the break. More specifically,  it  splits $l$ values into sub-lists $m$ and $n$ in order to maximize the expected value of differences  in the observed performances before and after divisions. For e.g., lists $l,m$ and $n$ of size $ls,ms$ and $ns$ where $l=m\cup n$, Scott-Knott divides the sequence at the break that maximizes:
+When comparing the results of different models in this study, we used a statistical significance test and an effect size test:
+\bi
+\item
+Significance test is useful for detecting if two populations
+differ merely by random noise. 
+\item
+Effect sizes are useful for checking that two populations differ by more than just a trivial amount.
+\ei
+For the significance test,  we use the Scott-Knott procedure  recommended at TSE'13~\cite{mittas2013ranking} and ICSE'15~\cite{ghotra2015revisiting}. This technique recursively bi-clusters a sorted set of numbers. If any two clusters are statistically indistinguishable, Scott-Knott reports them both as belonging to the same ``rank''.
+
+To generate these ranks, Scott-Knott first looks for a break in the sequence that maximizes the expected values in the difference in the means before and after the break. More specifically,  it  splits $l$ values into sub-lists $m$ and $n$ in order to maximize the expected value of differences  in the observed performances before and after divisions. For e.g., lists $l,m$ and $n$ of size $ls,ms$ and, $ns$ where $l=m\cup n$, Scott-Knott divides the sequence at the break that maximizes:
 \begin{equation}
     E(\Delta)=\frac{ms}{ls}\times abs(m.\mu - l.\mu)^2  + \frac{ns}{ls}\times abs(n.\mu - l.\mu)^2
 \end{equation}
 Scott-Knott then applies some statistical hypothesis test $H$ to check if $m$ and $n$ are significantly different. If so, Scott-Knott then recurses on each division. For this study, our hypothesis test $H$ was a conjunction of the A12 effect size test (endorsed by \cite{arcuri2011practical})  and non-parametric bootstrap sampling \cite{efron94}, i.e., our Scott-Knott divided the data if {\em both} bootstrapping and an effect size test agreed that the division was statistically significant (90\% confidence) and not a ``small'' effect ($A12 \ge 0.6$).
 
 
+\subsubsection{Interpreting the Scott-Knott Results}\label{sec:isk}
 
-% \subsection{Performance Measures}
-% \label{sec:Measures}
+{\color{blue} Scott-Knott divides a set of sorted numbers into ranks $1..x$  from lowest to the highest value. These ranks have a different interpretation, depending on whether we seek to minimize or maximize those numbers. For our purposes:
+\bi
+\item The first rank=1 is {\em worst} for recall, precision, Popt20 since we want to {\em maximize} these numbers.
+\item
+The first rank=1 is {\em best} for false alarms and ifa\_auc since we want to {\em minimize} those kinds of errors
+\ei
+\respto{3-9}
+Note one special case of the above. In the following results, we will see that ZeroR rarely predicts anything as defective. hence, it has a very low recall (median=0\%) but {\em also} a  very low false alarm and very low ifa\_auc rate. That is to say, ZeroR makes no mistakes since it rarely suggests anything at all.
+Accordingly, we will not be recommending ZeroR for defect prediction.}
 
-% In this section, we introduce the following 5 evaluation measures used in this study to evaluate the performance of machine learning models. Suppose we have a dataset with M changes and N defects. After inspecting 20\% LOC, we inspected $m$ changes and found $n$ defects. Also, when we find the first defective change, we have inspected k changes. Using
-% this data, we can define 5 evaluation measures  as follows:
 
-% (1) \textbf{Recall:} This is the proportion of inspected defective changes among all the actual defective changes; i.e. $n/N$.
-% Recall is used in  many previous studies~\cite{kamei2012large,yang2016effort,yang2017tlel,xia2016collective,yang2015deep}.  
-
-% (2) \textbf{Precision:} This is the proportion of inspected defective changes among all the inspected changes; i.e. $n/m$. A low Precision indicates that developers would encounter more false alarms, which may have negative impact on developers' confidence on the prediction model.  
-
-% (3) \textbf{pf:} This is the proportion of all suggested defective changes which are not actual defective changes among all the suggested defective changes. A high {\em pf} suggests developers will encounter more false alarms which may have negative impact on developers' confidence in the prediction model.
-
-% (4) \textbf{popt20:} This is the proportion number of suggested defective changes among all suggested defective changes, when when 20\% LOC modified by all changes are inspected. 
-% A high {\em popt20} values mean that developers can find most bugs in a small percent of the code.
-% To compute Popt20, we divided the test set into the modules predicted to be faulty (set1)
-% and predicted to be bug-free (set2). Each set was then sorted in ascending order by lines 
-% of code.  We then ran down set1, then set2, till 20\% of the total lines of code
-% were reached-- at which point {\em popt20} is the percent of buggy modules seen up to that point.
-
-% (5) \textbf{ifa\_auc:} Number of  initial false alarms encountered before we find the first defect. Inspired by previous studies on fault localization~\cite{parnin2011automated, kochhar2016practitioners, xia2016automated}, we caution that if the top-k changes recommended by the model are all false alarms, developers would be frustrated and are not likely to continue inspecting the other changes. Parnin and Orso ~\cite{parnin2011automated} found that developers would stop inspecting suspicious statements, and turn back to traditional debugging, if they could not get promising results within the first few statements they inspect. Using the nomenclature reported about {\em ifa$=k$}.  In this study we use a modified version of {\em ifa} called ifa\_auc, which calculates {\em ifa} based on efforts spent on inspecting the code. We use gradually increment the efforts spent by increasing the total LOC inspected and calculate ifa on each iteration to get the area under the curve (auc), here the x-axis is the percentage of effort spent on inspection and y-axis is {\em ifa}.
 
 
 \section{Results}
 \label{sec:results}
 
 {\color{blue} 
-\subsection*{RQ1: How slow is conventional bellwether method? }
-\label{sec:rq3}
-\respto{1-2}\respto{1-6a} Conventional bellwether as proposed by Krishna et al. compares all projects in a given community with all others to build defect prediction models and compare with each other. This operation is quite expensive, which has a $ O(n^2) $ computational complexity. In this experiment we used this conventional bellwether to make a baseline comparison with 627 projects (697 in total) in the community. Figure~\ref{fig:compare} showed that, the conventional bellwether did a total of {\em 393129} comparisons, while taking {\em 72} hours (with SMOTE and CFS) or {\em 10648} seconds (without SMOTE and CFS) to complete. In summary we conclude 
+\subsection*{RQ1:  How slow are   conventional bellwether methods? }
+\label{sec:rq1}
+\respto{1-6a} Conventional bellwether as proposed by Krishna et al. compares all projects in a given community with all others to build defect prediction models and compare with each other. This operation is quite expensive, which has an $ O(n^2) $ computational complexity. In this experiment, we used this conventional bellwether to make a baseline comparison with 697 projects (627 projects in training and 70 projects in testing) in the community. Figure~\ref{fig:compare} showed that the conventional bellwether did a total of {\em 393129} comparisons, while taking {\em 72} hours (with SMOTE and CFS) or {\em 10648} seconds (without SMOTE and CFS) to complete. In summary we conclude 
 
-\begin{RQ}{Conventional bellwether method as proposed by krishna et al~\cite{krishna2018bellwethers,krishna16a} uses a $ O(N^2) $ comparisons to find the ``bellwether'' among a community of N (697 projects in this experiment) projects. In this experiment the conventional bellwether method is very expensive to find the ``bellwether''.}
-\end{RQ}
-}
+\vspace{2mm}
+   \begin{blockquote}
+              \noindent {\bf
+              The conventional bellwether method as proposed by Krishna et al~\cite{krishna2018bellwethers,krishna16a} is slow since it requires  $ O(N^2) $ comparisons to find   one bellwethers within a community of N  projects.}
+            \end{blockquote}}
 
 {\color{blue} 
-\subsection*{RQ2: How fast is GENERAL bellwether?}
+\subsection*{RQ2: In theory, how much faster is GENERAL's hierarchical clustering?}
+\label{sec:rq2}
+The new bellwether method proposed in this paper uses a hierarchical clustering, then finds bellwether at leaf level clusters and pushes up bellwethers to parent nodes for comparisons. This process reduces the computational complexity to $O(m*(N/m)^2)$ on an average case (assuming the hierarchical clustering creates m cluster at leaf level). In theory, this is faster than the $O(N^2)$ computation reported for {\bf RQ1}. When compared with conventional bellwether, Figure~\ref{fig:compare} shows the new bellwether only requires {\em 9583} comparisons\, which is an order of magnitude fewer comparisons. Figure~\ref{fig:compare_time}   shows the new method only takes {\em 362} seconds (without SMOTE and CFS) to complete and {\em 1.5} hours (with SMOTE and CFS). In summary, we can say:} 
+
+\begin{blockquote}
+              \noindent {\bf              GENERAL is theoretically much faster since
+             its computational complexity is  $O(m*(N/m)^2)$.
+            }\end{blockquote}
+
+\subsection*{RQ3:  In practice,
+            how fast is  GENERAL?}
 \label{sec:rq3}
-The new bellwether method proposed in this paper uses a hierarchical clustering, then finds bellwether at leaf level clusters and pushes up bellwethers to parent nodes for comparisons. This process reduces the computational complexity to $O(m*(N/m)^2)$ on an average case (assuming the hierarchical clustering creates m cluster at leaf level). When compared with conventional bellwether, figure~\ref{fig:compare} shows the new bellwether only requires {\em 9583} comparisons\, which is order of magnitude less comparisons. Figure~\ref{fig:compare_time} and \ref{fig:time} shows the new method only takes {\em 362} seconds (without SMOTE and CFS) to complete and {\em 1.5} hours (with SMOTE and CFS). In summary we can say 
 
-\begin{RQ}{The new bellwether method (GENERAL), which is a combination of hierarchical clustering and bellwether method achieves  a computational complexity of $O(m*(N/m)^2)$, which is much faster than conventional bellwether.}
-\end{RQ}
-}
 
-\subsection*{RQ3: In practice,
-            can the hierarchical clustering of GENERAL tame slow runtimes seen in   bellwether-based reasoning?}
-\label{sec:rq3}
-
-% In the literature, we saw most of the previous studies have shown bellwether effect with very small datasets. In order to use bellwether to prove presence of generality in SE domain datasets, we first have to showcase the bellwether method suggested by Krishna et al. in their experiment works for large datasets. We use our defect prediction dataset with 697 projects for this purpose. 
-
-% We divide the dataset in train\_1 and test\_1 set and then performed a $ N*(N-1) $ comparison on all the projects in train\_1 set to find a bellwether, and then dividing each project in test\_1 set into train\_2 and test\_2 using a train\_test split. We use the train\_2 to train a LR model and test on test\_2 which is represented as \textit{self} in the figures. Similarly we use the bellwether project from train\_1 to train a LR model and test it on test\_2 which is represented as \textit{bellwether0}. We use statistical tests mentioned in section~\ref{stats} to compare the performance of \textit{self} vs \textit{bellwether0} for all the performance measures mentioned in section~\ref{sec:Measures}, which is shown 
  
-\respto{1-6c}\fig{Pseudo-code} showed that, theoretically,
+\respto{1-6b}{\color{blue} \fig{Pseudo-code} showed that, theoretically,
 GENERAL is an inherently faster approach than traditional bellwether methods.
 To test that theoretical
 conclusion,
 we ran the rig of \fig{GENERAL} on
-an four core machine running at 2.3GHz with 8GB of RAM. 
+a four core machine running at 2.3GHz with 8GB of RAM.} 
 
 
 
-\begin{figure}[!b]
-    \centering
-    \includegraphics[width=\linewidth]{figs/Time.png}
-    \caption{Mean runtime for for one run of standard bellwether and GENERAL (With SMOTE and CFS).}
-    \label{fig:time}
-\end{figure}
 
-\begin{figure}[!b]
+
+\begin{figure}[!t]
     \centering
     \includegraphics[width=\linewidth]{figs/Time_Compare.pdf}
-    \caption{Mean runtime for for one run of standard bellwether and GENERAL with different community size.}
+    \caption{Mean run-time required for finding a bellwether in a single run of standard bellwether and GENERAL with different community size.}
     \label{fig:compare_time}
 \end{figure}
 
-\begin{figure}[!b]
+\begin{figure}[!t]
     \centering
     \includegraphics[width=\linewidth]{figs/compare.pdf}
-    \caption{Number of comparison one run of standard bellwether and GENERAL with different community size.}
+    \caption{Number of comparisons required for finding a bellwether in a single run of standard bellwether and GENERAL with different community sizes.}
     \label{fig:compare}
 \end{figure}
 
-\fig{compare} shows the mean number of comparisons required for finding a bellwether using conventional bellwether versus GENERAL for different community size of 45,90, 180, 360 and 627 projects. We can see from the \fig{compare} for increasing community size the number of comparisons required increases rapidly for conventional bellwether, while with GENERAL the number of comparisons required are comparatively small. This shows the new bellwether method (aka GENERAL) is scalable with increasing community size.
-
-similarly \fig{compare_time} shows the mean run times for one run of GENERAL versus traditional bellwether for different community size of 45,90, 180, 360 and 627 projects. It is evident from the figure with growing community size the new bellwether method takes lesser amount of time ($\approx 4$ times faster in community size of 50 while $\approx 30$ times faster in a community size of 627 projects ).
 
 
-\fig{time} shows the mean run times for one run of GENERAL versus traditional bellwether (with SMOTE and CFS) for a community size of 627 projects . For certification purposes, this had to be repeated 20 times. In that certification run:
+
+{\color{blue}\fig{compare_time} and \fig{compare} shows the mean number of comparisons and mean run time required for finding a bellwether, using conventional bellwether method versus GENERAL for different community size of 45,90, 180, 360 and 627 projects. We can see from \fig{compare_time} and \fig{compare} for increasing community size the number of comparisons and time required increases rapidly for conventional bellwether method, while with GENERAL the number of comparisons required is relatively small. This shows the new bellwether method (aka GENERAL) is scalable with increasing community size. }
+
+
+
+In this study, we also recorded the mean run times for a single run of GENERAL versus traditional bellwether (with SMOTE and CFS) for a community size of 627 projects. For certification purposes, all experiments had to be repeated 20 times. In that certification run:
 
 \bi
 \item
 The $O(N^2)$ analysis of the traditional {\em bellwether0} approach needed 60 days of CPU time.
 \item 
 The $O(m*(N/m)^2)$ analysis
-of GENERAL needed 30  hours. That is, in empirical result consistent with the theoretical predictions of figure~\ref{fig:Pseudo-code}, GENERAL runs much faster than traditional bellwether.
+of GENERAL needed 30  hours. That is, in empirical results consistent with the theoretical predictions of Figure~\ref{fig:Pseudo-code}, GENERAL runs much faster than the traditional bellwether.
 \item 
 All the other methods required another 6 hours of computation. 
 \ei
 
-If we were merely seeking conclusions from one project, then we would recommend ignoring bellwethers and just use results from each project. That said, we still endorse bellwether method since  we seek lessons that hold across many projects.
+If we were merely seeking conclusions from one project, then we would recommend ignoring bellwethers and just use results from each project. That said, we still endorse bellwether method since  we seek knowledge that holds across many projects.
 
 In summary, based on these results, we conclude that:
 
-
-\begin{RQ}{Theoretically and empirically, the  hierarchical reasoning on GENERAL performs much faster than standard bellwether methods.}
-\end{RQ}
-
-
-
+\begin{blockquote}
+              \noindent {\bf    
+                When learning bellwethers from 697 projects,  GENERAL and   traditional   approaches terminated in 1.5 and 72 hours (respectively). That is to say,  GENERAL is far faster than standard bellwether methods.}
+            \end{blockquote}
 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%Latex Table%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{figure}[!b]
-% {\scriptsize
-% {\scriptsize \begin{tabular}{p{.1cm}lp{1.5cm}rrc}
-% \arrayrulecolor{darkgray}
-% \rowcolor[gray]{.9}  & rank & treatment & mean & sd & \\
-%  \multirow{5}{*}{\rotatebox[origin=c]{90}{Recall}} 
-%   &   1 &      GENERAL\_level2 &    38 &  32 & \quart{22}{38}{32}{16} \\
-%   &   1 &      bellwether0 &    39 &  31 & \quart{23}{39}{31}{15} \\
-%   &   1 &  ZeroR &    40 &  49 & \quart{16}{40}{49}{25} \\
-%   &   2 &      GENERAL\_level1 &    48 &  33 & \quart{31}{48}{33}{16} \\
-%   &   3 &      self &    55 &  27 & \quart{41}{55}{27}{12} \\
-%   &   3 &      GENERAL\_level0 &    56 &  31 & \quart{42}{56}{31}{16} \\
-%   &   4 &      global &    78 &  40 & \quart{57}{78}{40}{20} \\ \hline
-% \multirow{5}{*}{\rotatebox[origin=c]{90}{Pf}} 
-%   &  1 &      GENERAL\_level2 &    28 &  28 & \quart{14}{28}{28}{13} \\
-%   &  1 &      bellwether0 &    28 &  25 & \quart{15}{28}{25}{11} \\
-%   &  1 &      self &    30 &  20 & \quart{20}{30}{20}{10} \\
-%   &  1 &      GENERAL\_level1 &    35 &  28 & \quart{21}{35}{28}{14} \\
-%   &  1 &      ZeroR &    39 &  49 & \quart{15}{39}{49}{25} \\
-%   &  2 &      GENERAL\_level0 &    47 &  31 & \quart{31}{47}{31}{15} \\
-%   &  3 &      global &    79 &  39 & \quart{59}{79}{39}{19} \\\hline
-% \multirow{5}{*}{\rotatebox[origin=c]{90}{Precision}} &   1 &      ZeroR &    21 &  30 & \quart{6}{21}{30}{15} \\
-%     &  2 &      global &    35 &  28 & \quart{21}{35}{28}{14} \\
-%     &   2 &      GENERAL\_level2 &    39 &  34 & \quart{22}{39}{34}{17} \\
-%     &   2 &      bellwether0 &    40 &  33 & \quart{23}{40}{33}{16} \\
-%     &   2 &      GENERAL\_level1 &    42 &  31 & \quart{26}{42}{31}{15} \\
-%     &   2 &      GENERAL\_level0 &    44 &  30 & \quart{28}{44}{30}{15} \\
-%     &   2 &      self &    50 &  30 & \quart{35}{50}{30}{15} \\\hline
-% \multirow{5}{*}{\rotatebox[origin=c]{90}{Popt20}} &   1 &      ZeroR &    13 &  16 & \quart{5}{13}{16}{8} \\
-%   & 2 &      GENERAL\_level2 &    26 &  22 & \quart{15}{26}{22}{11} \\
-%   &  2 &      global &    26 &  13 & \quart{19}{26}{13}{6} \\
-%   &  2 &      bellwether0 &    28 &  21 & \quart{17}{28}{21}{9} \\
-%   &  2 &      GENERAL\_level0 &    28 &  15 & \quart{22}{28}{15}{8} \\
-%   &  2 &      GENERAL\_level1 &    28 &  19 & \quart{19}{28}{19}{9} \\
-%   &  3 &      self &    35 &  19 & \quart{26}{35}{19}{10} \\\hline
-% \multirow{5}{*}{\rotatebox[origin=c]{90}{ifa\_auc}} &   1 &      ZeroR &    7 &  11 & \quart{1.12}{6.77}{11.29}{5.65} \\
-%   &  2 &      global &    19 &  16 & \quart{11.35}{19.38}{16.06}{8.03} \\
-%   &  3 &      GENERAL\_level2 &    22 &  14 & \quart{14.48}{21.59}{14.21}{7.10} \\
-%   &  3 &      bellwether0 &    23 &  14 & \quart{15.48}{22.56}{14.15}{7.07} \\
-%   &  3 &      self &    23 &  12 & \quart{17.09}{22.93}{11.68}{5.84} \\
-%   &  3 &      GENERAL\_level1 &    23 &  14 & \quart{16.10}{22.98}{13.74}{6.87} \\
-%   &  3 &      GENERAL\_level0 &    25 &  13 & \quart{17.87}{24.51}{13.27}{6.63} \\
-% \end{tabular}}
-% }
-% \caption{Statistical Results comparison. The ``rank`` column at left comes from
-% the statistical analysis methods of \S\ref{eval}. Note that for {\em pf}, and {\em ifa} rank=1 is the best rank while for all other performance measures, ranks $\in{3,4}$ are best. 
-% }\label{fig:Statistical}
-% \end{figure}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%Latex Table%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%Latex Table%%%%%%%%%%%%%%%%%%%%%%%%% \rowcolor[gray]{.9}
 \begin{figure}[!b]
 {\scriptsize
 {\scriptsize 
 \resizebox{.48\textwidth}{!}{
 \begin{tabular}{p{.1cm}lp{1.5cm}rrc}
 \arrayrulecolor{darkgray}
-\rowcolor[gray]{.9}  & rank & treatment & median & IQR & \\
+\rowcolor[HTML]{C0C0C0}  & rank & treatment & median & IQR & \\ 
  \multirow{5}{*}{\rotatebox[origin=c]{90}{Recall}} 
   & 1 &      ZeroR &    0 &  100 & \quart{0}{0}{100}{100} \\
   & 1 &      GENERAL\_level2 &    33 &  63 & \quart{0}{33}{63}{30} \\
@@ -1471,13 +1194,13 @@ In summary, based on these results, we conclude that:
   & 2 &      GENERAL\_level1 &    50 &  54 & \quart{20}{50}{54}{24} \\
   & 3 &      GENERAL\_level0 &    57 &  47 & \quart{36}{57}{47}{25} \\
   & 3 &      self &    57 &  34 & \quart{41}{57}{34}{17} \\
-  & 4 &      global &    100 &  12 & \quart{88}{100}{12}{0} \\ \hline
+  &\rowcolor[gray]{0.9} 4 &      global &    100 &  12 & \quart{88}{100}{12}{0} \\ \hline
 \multirow{5}{*}{\rotatebox[origin=c]{90}{Pf}} 
   & 1 &      ZeroR &    0 &  100 & \quart{0}{0}{100}{100} \\
   & 1 &      GENERAL\_level2 &    21 &  43 & \quart{0}{21}{43}{22} \\
   & 1 &      bellwether0 &    25 &  45 & \quart{0}{25}{45}{20} \\
   & 1 &      self &    25 &  23 & \quart{17}{25}{23}{15} \\
-  & 1 &      GENERAL\_level1 &    33 &  41 & \quart{10}{33}{41}{18} \\
+  &\rowcolor[gray]{.9} 1 &      GENERAL\_level1 &    33 &  41 & \quart{10}{33}{41}{18} \\
   & 2 &      GENERAL\_level0 &    45 &  43 & \quart{24}{45}{43}{22} \\
   & 3 &      global &    100 &  17 & \quart{83}{100}{17}{0} \\ \hline
 \multirow{5}{*}{\rotatebox[origin=c]{90}{Precision}} 
@@ -1485,7 +1208,7 @@ In summary, based on these results, we conclude that:
   & 2 &      global &    33 &  45 & \quart{11}{33}{45}{23} \\
   & 2 &      bellwether0 &    36 &  63 & \quart{4}{36}{63}{31} \\
   & 2 &      GENERAL\_level2 &    36 &  65 & \quart{0}{36}{65}{29} \\
-  & 2 &      GENERAL\_level1 &    41 &  54 & \quart{13}{41}{54}{26} \\
+  &\rowcolor[gray]{.9} 2 &      GENERAL\_level1 &    41 &  54 & \quart{13}{41}{54}{26} \\
   & 2 &      GENERAL\_level0 &    41 &  47 & \quart{20}{41}{47}{26} \\
   & 2 &      self &    50 &  44 & \quart{28}{50}{44}{23} \\ \hline
 \multirow{5}{*}{\rotatebox[origin=c]{90}{Popt20}} 
@@ -1495,9 +1218,9 @@ In summary, based on these results, we conclude that:
   & 2 &      bellwether0 &    31 &  42 & \quart{0}{31}{42}{11} \\
   & 2 &      GENERAL\_level0 &    31 &  16 & \quart{23}{31}{16}{8} \\
   & 2 &      GENERAL\_level1 &    31 &  23 & \quart{17}{31}{23}{9} \\
-  & 3 &      self &    36 &  20 & \quart{27}{36}{20}{11} \\ \hline
+  &\rowcolor[gray]{.9} 3 &      self &    36 &  20 & \quart{27}{36}{20}{11} \\ \hline
 \multirow{5}{*}{\rotatebox[origin=c]{90}{ifa\_auc}} 
-  & 1 &      ZeroR &    0 &  11 & \quart{0}{0}{11}{11} \\
+  &\rowcolor[gray]{.9} 1 &      ZeroR &    0 &  11 & \quart{0}{0}{11}{11} \\
   & 2 &      global &    15 &  29 & \quart{6}{15}{29}{20} \\
   & 3 &      GENERAL\_level2 &    21 &  21 & \quart{11}{21}{21}{11} \\
   & 3 &      bellwether0 &    22 &  21 & \quart{13}{22}{20}{11} \\
@@ -1507,117 +1230,19 @@ In summary, based on these results, we conclude that:
 \end{tabular}}}
 }
 \caption{Statistical Results comparison. The ``rank`` column at left comes from
-the statistical analysis methods of \S\ref{eval}. Note that for {\em pf}, and {\em ifa}, which we want to minimize, low rank (i.e. rank=1) is the best rank while for other performance measures where we want to maximize, ranks  such as $\in{3,4}$ are better. 
+the statistical analysis methods of \S\ref{eval}.
+In this figure, the {\bf best} ranks are highlighted in gray,
+As discussed in \S\ref{sec:isk}, since we want to minimize {\em pf}, and {\em ifa\_auc} then the {\em lowest ranks} (i.e. rank=1) are   {\em best}. But for other measures,
+which we want to maximize (recall, precision, Popt20), the {\em largest ranks} are {\em best}. 
 }\label{fig:Statistical}
 \end{figure}
 
-% {\small 
-% \begin{figure*}[!t]
-%     \centering
-%     \begin{tikzpicture}[nodes={draw, circle,fill=darkgray!60}, ->,sibling distance=.7cm,minimum size=.1cm,scale=.5]
- 
-%     \node{627}
-%         child { node {57}
-%             child {node {9}} 
-%             child {node {9}} 
-%             child {node {7}} 
-%             child {node {17}}
-%             child {node {13}}}
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child { node {127} 
-%             child {node {3}} 
-%             child {node {9}} 
-%             child {node {19}} 
-%             child {node {15}}
-%             child {node {4}}
-%             child {node {17}} 
-%             child {node {15}} 
-%             child {node {19}} 
-%             child {node {11}}
-%             child {node {15}}}
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child { node {183} 
-%             child {node {8}} 
-%             child {node {3}} 
-%             child {node {12}} 
-%             child {node {16}}
-%             child {node {20}}
-%             child {node {18}} 
-%             child {node {12}} 
-%             child {node {4}} 
-%             child {node {12}}
-%             child {node {16}}
-%             child {node {5}}
-%             child {node {17}} 
-%             child {node {9}} 
-%             child {node {9}} 
-%             child {node {10}}
-%             child {node {14}}}
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child [missing]
-%         child { node {260} 
-%             child {node {17}} 
-%             child {node {17}} 
-%             child {node {20}} 
-%             child {node {14}}
-%             child {node {9}}
-%             child {node {13}} 
-%             child {node {18}} 
-%             child {node {10}} 
-%             child {node {18}}
-%             child {node {10}}
-%             child {node {6}} 
-%             child {node {15}} 
-%             child {node {14}} 
-%             child {node {9}}
-%             child {node {10}}
-%             child {node {8}} 
-%             child {node {7}} 
-%             child {node {13}} 
-%             child {node {15}}}
-%             ;
-% \end{tikzpicture}
-%     \caption{Example of Hierarchical Clustering for 627 projects}
-%     \label{fig:example tree}
-% \end{figure*}
-% }
+
 %%%%%%%%%%%%%%%%%%%%%%%End Latex Table%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}[!t]
+\begin{figure*}[!b]
     \centering
-    \includegraphics[width=\linewidth]{figs/bubble.pdf}
+    \includegraphics[width=.9\linewidth]{figs/bubble.pdf}
     \caption{Example of Hierarchical Clustering for 627 projects}
     \label{fig:example tree}
 \end{figure*}
@@ -1636,8 +1261,7 @@ than those generated by other methods).
 
  
 Figure~\ref{fig:Statistical} shows the distribution of
-performance score results seen in
-of \fig{GENERAL}. These results are grouped together by the ``rank'' score
+performance score results seen in \fig{GENERAL}. These results are grouped together by the ``rank'' score
 of the left-hand-side column 
 (and this rank was generated using the statistical methods of
 \S\ref{eval}).
@@ -1647,10 +1271,15 @@ In these results, the {\em ifa\_auc}  and {\em precision} scores
 were mostly uninformative. With the exception of {\em ZeroR},
 there was very little difference in these scores.
 
+
+
+
 As to {\em ZeroR}, we cannot recommend that approach.
-While {\em ZeroR} 
-makes few mistakes (low {\em ifa}s and low {\em pf}s), it scores badly
-on   other measures (very low {\em recall}s  and {\em popt(20)}.
+ZeroR is a method where we predict everything as the majority class.
+In Figure~\ref{fig:Statistical}, ZeroR model has a median recall, precision and pf of zero. 
+That is, this method has very few errors since it offers very few suggestions on what might be defective.
+As discussed at the end of   \S\ref{sec:isk}, we cannot recommend such a method.
+  
 
 Similarly, we cannot recommend the    {\em global} approach.
 In this approach, quality predictors are learned from   one data set that combines
@@ -1659,18 +1288,18 @@ that approach generates an unacceptably large false alarm rate ($pf=79\%$).
 
 Another approach we would deprecate is the traditional bellwether approach.
 By all the measures of
-Figure~\ref{fig:Statistical},   the {\em bellwether0} are in the middle of the pack. That is:
+Figure~\ref{fig:Statistical},   the {\em bellwether0} is in the middle of the pack. That is:
 \bi
 \item
 That approach is in no way outstanding. 
 \item
 So, 
 compared to hierarchical bellwether,
- there is no evidence here of a performance
-benefit from using  traditional bellwether.
+ there is no evidence here of better performance
+  from    traditional bellwethers.
 \item
-Given this lack luster performance, 
-and   the {\bf RQ3} results (where traditional bellwether ran very slowly), we therefore  
+Given this weak performance, 
+and   the {\bf RQ3} results (where traditional bellwether ran very slowly), we, therefore,  
 deprecate the traditional bellwether approach.
  \ei
 As to GENERAL vs the local learning results of {\em self}, in many ways their performance in  Figure~\ref{fig:Statistical},
@@ -1678,55 +1307,46 @@ is indistinguishable:
 \bi
 \item As mentioned above, measured in terms of {\em ifa\_auc}
 and {\em precision}, there is no significant differences.
-\item In terms of {\em recall} there is no statistical difference in the rank
+\item For {\em recall} there is no statistical difference in the rank
 of  local learning with {\em self} and 
   {\em GENERAL\_level0}
 (a bellwether
-generated from the root of a BIRCH cluster tree) and 
-\item In terms of {\em pf} (false alarms), some of the GENERAL results are ranked
+generated from the root of a BIRCH cluster tree); 
+\item In terms of {\em pf} (false alarms) and Popt20, some of the GENERAL results are ranked
 the same as {\em self} (and we will expand on this point, below).
 \ei
-Overall, we summarize the Figure~\ref{fig:Statistical} results as follows:
+In part, we summarize Figure~\ref{fig:Statistical} results as follows:
 
 
 %XXX GL1: worse at nothing, statistically better of recall and pf
 
 % 5XXX RQ5 is very short.
 
-\begin{RQ}
-{Measured in terms of predictive performance,
-the effectiveness of hierarchical bellwethers
-is very similar to local learning
-(and these two methods are more effective
-than the other options explored here). }
-\end{RQ}
-
+ \begin{blockquote}
+              \noindent {\bf  
+                Across multiple performance criteria, the faster GENERAL bellwether algorithm never performs worse that standard bellwether. And measured in terms of recall and false alarm, GENERAL performs statistically much better.}
+            \end{blockquote}
  
-When two options have similar predictive
-performance, then other criteria can be used
-to select between them:
-\bi
-\item If the goal is to quickly generate
-conclusions about one project, then we would recommend
-local learning since (as seen above), local learning is five
-times faster than hierarchical bellwether.
-\item
-But, as said at the start
-of \S\ref{sec:results},
-our goal is to quickly generalize across hundreds of
-projects. 
-\ei
+ This summary does not address an important issue, discussed in {\bf RQ5}.
+ 
+ 
  
 
 
+\begin{figure*}[!b]
+    \centering
+    \includegraphics[width=\linewidth]{figs/fss.pdf}
+    \caption{Distribution of features selected using self model and ``Bellwether'' model. Bars in red denote features found in the GENERAL\_level1 models (see Table~\ref{tbl:coefs_4}). }
+    \label{fig:FSS_level1}
+\end{figure*}
 
 \subsection*{RQ5: Does learning from too many projects have detrimental effect?}
 \label{sec:rq5}
 
 \respto{2-21}{\color{blue}
-This sections ask if conclusions always improve as we learn from more and more data.
+This section ask if conclusions always improve as we learn from more and more data.
 This can be an issue since if a new project
-is fundamentally different to all past projects, then irrelevant ideas from the past will be
+is fundamentally different from all past projects, then irrelevant ideas from the past will be
 inappropriately applied to the present situation.  
 This is a special problem that arises when combining old data  with new data.} 
  
@@ -1737,26 +1357,25 @@ of clusters shown in
 \fig{example tree}. In that tree:
 \bi
 \item
-The bellwether found at level 0 of the tree
-(which we call {\em GENERAL\_level0}) is learned from 627 projects.
+The bellwether found at level 0 of the tree (which we call {\em GENERAL\_level0}) is learned from 627 projects.
 \item
 The bellwethers found at level 1 of the tree
-(which we call {\em GENERAL\_level1}) is learned from four sub-groups
-of our projects.
+(which we call {\em GENERAL\_level1}) is learned from four  groups
+of   projects.
 \item
 The bellwethers found at level 2 of the tree
-(which we call {\em GENERAL\_level2}) is learned from 80
-sub-sub groups of our projects.
-\ei
-That is, to answer {\bf RQ5} we need only compare the predictive performance
-of models learned from these different levels. In that comparison,
-if the level\_$(i+1)$ bellwethers generated better predictions
-that the   level\_$(i)$ bellwethers, then we would conclude that it is best to learn lessons from smaller groups
-of projects.
+(which we call {\em GENERAL\_level2}) are learned from 58   groups of   projects.
 
-Figure~\ref{fig:Statistical} lets us
-compare the performance of the bellwethers learned from different 
-levels:
+\ei
+From this list, we make two comments:
+\bi
+\item Firstly, we note if we just use the results from  
+{\em GENERAL\_level0} then we are returning just one model. However, if we use the results from {\em GENERAL\_level1}, then we will return a  handful
+of bellwethers. In this regard, GENERAL is different from traditional bellwethers since this new method can return multiple models, each specialized for a different set of projects.
+\item
+Second, we note that to answer {\bf RQ5} we need only compare the predictive performance of models learned from these different levels. In that comparison, if the level\_$(i+1)$ bellwethers generated better predictions that the   level\_$(i)$ bellwethers, then we would conclude that it is best to learn knowledge from smaller groups of projects.
+\ei
+Figure~\ref{fig:Statistical} lets us compare the performance of the bellwethers learned from different levels:
 \bi
 \item The {\em ifa} and {\em Popt20} 
 and {\em precision}  results for the different levels
@@ -1766,127 +1385,107 @@ measures, we cannot distinguish the performance at different levels.
 As to {\em recall},   the level2,1,0 bellwether results are 
 respectively ranked worst, better, best. 
 \item
-Slightly different results are offered in the {\em pf} false alarm results. Here,  levels2,1,0 bellwether are respectively ranked best, best, worst.
+Worse results are seen in the {\em pf} false alarm rates using models learned from the top of the cluster tree.
 \ei
+In summary, measured in terms of false alarm rates,
+our results say that it is possible to learn from too much data. Based on Figure~\ref{fig:Statistical}, we say that it is better to use the multiple models generated by
+{\em GENERAL\_level1} since this has a lower false alarm
+rate than the single model
+generated by {\em GENERAL\_level0}. Hence, for this research question, we conclude:
 
-To put that another way, the answer to ``is is possible to learn from too much data'', is ``depends on what you value'':
-\respto{3-13}{\color{blue}
-\bi
-\item
-For risk-adverse development, it is best to use all data to learn the bellwether
-since that finds most defects.
-\item
-On the other hand, for cost-adverse development (where cutting development cost
-is more important than removing
-bugs), then there seems to be a ``Goldilocks zone'' where
-the bellwether is learned from just enough data (but not too much or too little).
-\ei
-}
-That is, these results say that:
+   \begin{blockquote}
+              \noindent {\bf  
+            Learning from  a few hundred  projects is better
+than learning from just a few dozens   projects.
+But after generalizing over 200 projects (approx), the learned
+model start degrading.  
+  }\end{blockquote} 
 
-\begin{RQ}
-{Assessed in terms of {\em recall},
-it is better to learn bellwethers from more data rather than less.
-But assessed in terms of {\em false alarms}, 
-while learning bellwethers
-from many projects is useful, it is possible to learn from too much data.} 
-\end{RQ}
-
-% In this section, we return to 
-% In RQ4, we try to answer the question if learning from too many projects detrimental effect, this question has two parts, one on predictive power, the other on making general conclusion and conclusion instability. Figure~\ref{fig:Statistical} shows the results of statistical significance and effect size tests to rank them in order for all the different methods(treatments) used in this experiment. In this figure for a performance measure two methods showing same rank means there performance is not statistically significantly different, while a different ranks mean they are different, while a smaller rank is better if the performance goal is negative (i.e. Pf), and higher rank is better in case of positive goal (i.e. Recall).
-
-% To answer the first part of the question, if learning from too many projects have detrimental effect on predictive power of models, we compare the results of default ``bellwether method'' (a.k.a bellwether0) proposed by Krishna et al. and GENERAL(a.k.a GENERAL\_level0) method. The results of scott-knott test shows that for positive goals such as Recall the GENERAL\_level0 is significantly doing better than Bellwether0 and it is doing as good as or better for precision ans recall. While for negative goals such as ifa\_auc GENERAL\_level0 is doing as good as bellwether0. Although in case of Pf they score different ranks with GENERAL showing higher Pf then bellwether0, it is not by much. Similarly while comparing GENERAL\_level0 with global (which is learning from all the projects) shows although it achieves higher Recall, but it has very high Pf, low precision. Which answers the first part of the question that learning from too many projects do have detrimental effect on predictive power of models. 
-
-
-% Now to answer the second part of the question, that is if learning from too many projects creates conclusion instability, we will look at figure~\ref{fig:FSS_compare}. Figure~\ref{fig:FSS_compare} show the distribution of attributes selected while building a ML model for defect prediction using local models(a.k.a self), the \textcolor{red}{{\bf red bars}} shows the attributes selected by the ``Bellwether Project''. Conclusion instability causes vastly different and often contradicting conclusions to be derived from a data source. This sort of instability is very prevalent in several domains of software engineering. We can see from figure~\ref{fig:FSS_compare}, when learning from local data, each model selected different sets of attributes and resulted in selecting almost all different attributes. That means there is no general conclusion can be drawn for defect prediction models by saying which attributes are important, this results in conclusion instability and that effects the trusts on those models, the insights that can be drawn from them. Which farther affects training and tool development as mentioned in sec~\ref{sec:Motivation}. From these results we can see learning from too many data can cause conclusion instability and thus affecting generality in SE domain. In Summary, we can say 
+To say that another way,   when learning from a very large number of projects (hundreds), they may be useful
+to learn a handful of bellwethers, each of which covers (say) just a few hundred projects. In this regard,
+GENERAL is better than prior bellwether algorithms
+since GENERAL can find multiple bellwethers while
+older methods only ever find one.
 
 
 
-\begin{figure*}[h]
-    \centering
-    \includegraphics[width=\linewidth]{figs/FSS_compare.png}
-    \caption{Distribution of features selected using self model and ``Bellwether'' model.}
-    \label{fig:FSS_compare}
-\end{figure*}
 
-\subsection*{RQ6: What exactly did we learn from all those projects?}
+\section{Discussion}
 \label{sec:rq6}
 
-Having demonstrated that we can quickly find bellwethers
-from hundreds of software projects, it is appropriate to ask
-what model was learned from all that data. This is an important question for this research since if  we cannot show the lessons
-learned from our 627 projects, then all the above is wasted effort.
+One lesson learned from this work is that
+features that seem useful (based on some local analysis),
+may not actually be generally useful
+(based on a more global analysis).
+To see this, we need to compare the
+features seen in
+Table~\ref{tbl:coefs_4} and
+\fig{FSS_level1}  
 
-Table~\ref{tbl:coefs}  shows the weights learned by logistic
-regression after feature selection using the bellwether project
-selected by {\em GENERAL\_level0}. Note that:
-\bi
-\item
-The number of features that appear in Table~\ref{tbl:coefs}  is much smaller than the list of features shown in Table~\ref{tbl:metric}.
-That is, our bellwether is reporting that only a few features
-are most important for predicting software defects.
-\item
-Table~\ref{tbl:coefs}  is sorted by the absolute value of the weights
-associated with those features. The last two features have near
-zero weights; i.e. they have negligible effect.
-\ei
-Apart from the negligible features, all that is left are NPRM, NPNM, RFC , and CBO. As shown in Table~\ref{tbl:metric}, these features
-all relate to class interface concepts; specifically: 
-\bi
-\item
-The number of public and private methods; 
-\item
-The  average number of methods that respond to an incoming message; 
-\item
-Inter-class coupling. 
-\ei
+  Table~\ref{tbl:coefs_4} 
+ shows what  features were generally
+ ``globally important'' 
+ Here, by ``globally important'' we mean that the features were found in
+  one of the four models generated from  {\em GENERAL\_level1}. Also,
+  the $\beta$ coefficient on those features was not  close to zero (where ``close'' means $-0.1 \le \beta \le 0.1$).
+We   say that the  features  of Table~\ref{tbl:coefs_4}   are ``globally important''
+  since our analysis shows that, across many data sets,
+  they are the ones that most predict for defects.
+  
+\fig{FSS_level1} shows what features were found to be ``locally important'' within specific data sets. 
+ Recalling \S\ref{sec:dm}, we say that a feature is
+ ``locally important'' if the CFS feature selection algorithm found that it was amongst the features
+ that best presented for defects within each data set. This figure counts how often a particular feature was selected across our 697 projects. 
+ We call these features   ``locally important''
+ since these results come from an analysis that is restricted to just one data set.
+
+
 \begin{table}[!t]
 \centering
-\begin{tabular}{|l|l|l|l|} \hline
-Rank & Attr               & coef  & Odds ratio \\ \hline
-1    & avg\_NPRM          & 2.23  & 9.26      \\ \hline
-2    & avg\_NPBM          & -1.31 & 0.27      \\ \hline
-3    & max\_NPBM          & -1.12 & 0.33      \\ \hline
-4    & max\_RFC           & 0.74  & 2.09      \\ \hline 
-5    & total\_NPBM        & -0.70 & 0.50      \\ \hline
-6    & max\_CBO           & -0.64 & 0.53      \\ \hline
-7    & total\_ModifiedLOC & 0.10  & 1.10      \\ \hline
-8    & avg\_WMC           & 0.07  & 1.07     \\ \hline
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Attributes & Cluster 1 & Cluster 2 & Cluster 3 & Cluster 4 \\ \hline
+NRev       & \bluecheck         &           &           &           \\ \hline
+NFix       &           & \bluecheck         &           &           \\ \hline
+LOC        & \bluecheck         & \bluecheck         &           &           \\ \hline
+CC         & \bluecheck         &           &           &           \\ \hline
+NIV        & \bluecheck         &           & \bluecheck         &           \\ \hline
+NPM        & \bluecheck         &           & \bluecheck         &           \\ \hline
+CBO        &           & \bluecheck         &           &           \\ \hline
+FANOUT     &           &           & \bluecheck         &           \\ \hline
+CL         &           &           & \bluecheck         & \bluecheck         \\ \hline
+RCC        &           &           &           & \bluecheck         \\ \hline
+NOC        &           &           & \bluecheck         & \bluecheck         \\ \hline
 \end{tabular}
-
-\caption{Importance of coefs on \textit{log p} from logistic regression model of ``Bellwether'' shown in Fig~\ref{fig:FSS_compare}. Here Odds ratio shows one increment in in respective variable increase in the log-odds of being defective.}\label{tbl:coefs}
+\caption{Important features in the four   GENERAL\_level1 models found by this study. 
+Features are included here only if
+their $\beta$ coefficients  are   not   ``close'' to zero (where ``close'' means $-0.1 \le \beta \le 0.1$).}
+\label{tbl:coefs_4}
 \end{table}
-\fig{FSS_compare} shows what might be learned with and without
-the methods of this paper. Recall that the learners used in this research used feature selection and  logistic regression.
-\begin{itemize}
-\item  The gray bars in \fig{FSS_compare} show how often the features
-of Table~\ref{tbl:metric} were selected in the models learned from
-local data using {\em self}. 
+
+To make it easy to compare these locally and globally important features,  we color in \textcolor{red}{{\bf RED}}
+all the bars of \fig{FSS_level1} that come from features
+also found in  Table~\ref{tbl:coefs_4}. Note that only a small subset of the locally important
+features are actually globally important.
+
+Note also that, at first glance, there  seems to be some agreement on what is both locally and globally important. On the left-hand side of  \fig{FSS_level1}, we see that six of the top ten locally important features are colored red; i.e. they are also globally important. 
+
+On the other hand, a more careful analysis shows things that it is not wise to simply assume that the most locally important features are usually important for most projects:
+\bi
 \item
-The red bars in \fig{FSS_compare} shows which features
-used in the local models that also appeared in the model learned from the bellwether. 
-  Note that only a very
-small subset of the features seen in the  {\em self} models
-were found useful in the bellwether model of Table~\ref{tbl:coefs}.
-\end{itemize}
-Just to say the obvious:
-when learning
-local models from very many projects, there is a wide range 
-of features used in the model.
-It is far easier to 
-definitively learn lessons from a much smaller range
-of features, such as those listed in Table~\ref{tbl:coefs}.
-Based on these results
-we can say that for predicting defects, in this sample of  features taken from 627 projects:
-In summary:
-
-\begin{RQ}
-{\respto{2-9} {\color{blue}In terms of defect prediction,
-issues of inter-class interface are paramount.
-Many other  issues are far less important such as file size, depth of inheritance tree, intra-method complexity, file size, revision history.}}
-\end{RQ}
-
+Consider the top four most common locally important features: NFix, NRev, CL, RCC. These features appear in  25\%, 25\%, 50\%, 25\% 
+(respectively) of the clusters shown in Table~\ref{tbl:coefs_4}. 
+\item
+Also, consider the height of the bars in \fig{FSS_level1}. Nearly all the locally important features are important in less than 25\% of projects.
+\ei
+That is,  it is a mistake to assume that something that is  important for a few local projects is globally useful to dozens to hundreds of projects. 
+That said, the good news from this analysis is that in terms of defect prediction,
+ (a)~hundreds of projects can be reasoned about using just four groups; (b)~within each group, there exist some general conclusions (see Table~\ref{tbl:coefs_4}). 
  
+ 
+
+
 
 \section{Threats to Validity}
 \label{sec:validity}
@@ -1896,18 +1495,18 @@ results. Therefore, any conclusions made from this work
 must be considered with the following issues in mind:
 
 (a) \textit{Evaluation Bias}: 
-In  {\bf  RQ3, RQ4} and {\bf RQ5} we have shown the performance of local model, hierarchical bellwether models, default bellwether model and compared them using statistical tests on their performance to make conclusion about presence of generality in SE datasets. While those results are true, that conclusion is scoped by the evaluation metrics we used to write this paper. It is possible that, using other measurements, there may well be a difference in these different kinds of projects. This is a matter that needs to be explored in future research.  
+In  {\bf  RQ3, RQ4} and, {\bf RQ5} we have shown the performance of local model, hierarchical bellwether models, default bellwether model and compared them using statistical tests on their performance to make conclusion about presence of generality in SE datasets. While those results are true, that conclusion is scoped by the evaluation metrics we used to write this paper. It is possible that using other measurements, there may well be a difference in these different kinds of projects. This is a matter that needs to be explored in future research.  
 
     
 (b) \textit{Construct Validity}: At various places in this report, we made engineering decisions about (e.g.) choice of machine learning models, hierarchical clustering algorithm, selecting feature vectors for each project. While those decisions were made using advice from the literature, we acknowledge that other constructs might lead to different conclusions. 
 
-(c) \textit{External Validity}: For this study we have relied on data collected by Zhang et al.~\cite{zhang15} for their studies. The metrics collected for each project were done using an commercialized tool called ``Understand''. There is a possibility that calculation of metrics or labeling of defective vs non-defective using other tools or methods may result in different outcome. That said, the ``Understand'' is a commercialized tool which has detailed documentation about the metrics calculations and Zhang et al. has shared their scripts and process to convert the metrics to usable format and has described the approach to label defects.  
+(c) \textit{External Validity}: For this study, we have relied on data collected by Zhang et al.~\cite{zhang15} for their studies. The metrics collected for each project were done using a commercialized tool called ``Understand''. There is a possibility that calculation of metrics or labeling of defective vs non-defective using other tools or methods may result in different outcomes. That said, the ``Understand'' is a commercialized tool which has detailed documentation about the metrics calculations and Zhang et al. has shared their scripts and process to convert the metrics to a usable format and has described the approach to label defects.  
 
 We have relied on issues marked as a `bug' or `enhancement' to count bugs or enhancements, and bug or enhancement resolution times. In Github, a bug or enhancement might not be marked in an issue but in commits. There is also a possibility that the team of that project might be using different tag identifiers for bugs and enhancements. To reduce the impact of this problem, we  did take precautionary step to (e.g.,) include various tag identifiers from Cabot et al.~\cite{cabot2015exploring}. We also took precaution to remove any pull merge requests from the commits to remove any extra contributions added to the hero programmer. 
 
 (d) \textit{Statistical Validity}: To increase the validity of our results, we applied two statistical tests, bootstrap and the a12. Hence, anytime in this paper we reported that ``X was different from Y'' then that report was based on both an effect size and a statistical significance test.
  
-(e) \textit{Sampling Bias}: Our conclusions are based on the 697 projects collected by Zhang et al.~\cite{zhang15} for their studies. It is possible that different initial projects would have lead to different conclusions. That said, this sample is very large so we have some confidence that this sample represents an interesting range of projects. As evidence of that, we note that our sampling bias is less pronounced than other ``Bellwether'' studies since we explored.
+(e) \textit{Sampling Bias}: Our conclusions are based on the 697 projects collected by Zhang et al.~\cite{zhang15} for their studies. It is possible that different initial projects would have lead to different conclusions. That said, this sample is very large so we have some confidence that this sample represents an interesting range of projects.  
  
 
 
@@ -1919,9 +1518,7 @@ While GENERAL only reflects on a small percent of the projects,
 its hierarchical methods find projects which yield models
 whose performance is comparable to anything else we studied
 in this analysis.
-Using GENERAL, we have shown that issues
-of class interface design were the most critical
-issue within a sample of 628 projects.
+ 
 
 One reason we recommend GENERAL is its scalabiity.
 Pre-existing
@@ -1944,15 +1541,16 @@ complicated methods.
 
 
 
-\section{Acknowledgements}
+\section{Acknowledgments}
 \label{sec:ack}
 
 This work was partially funded by NSF Grant \#1908762.
  
 \bibliographystyle{IEEEtran}
 \bibliography{main} 
-\newpage
-\begin{minipage}{\linewidth}
+%  \newpage
+ 
+\begin{minipage}{.9\linewidth}
 \begin{IEEEbiography}[{\includegraphics[width=1in,clip,keepaspectratio]{figs/suvodeep.JPG}}]{Suvodeep Majumder}
  is a second year Ph.D. student in Computer Science at North Carolina State University.  
   His research interests include using large scale data mining and application of big data and artificial intelligence methods to solve problems in software engineering.

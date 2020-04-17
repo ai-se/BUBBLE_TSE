@@ -13,27 +13,27 @@
 
 \response{ Thank you very much for your encouraging comments. We find that the prior draft made
 several mistakes, that have been fixed here.
-\bi
-\item We assumed that the  core motivation for this work
-was widely known and accepted in the community. That was a mistake. This draft completely rewrites the Introduction
+For example,  we assumed that the  core motivation for this work
+was widely known and accepted in the community. That was a mistake so this draft completely rewrites the Introduction
 to include much more background information on the 
-presence of the problem studied here.
-\item Cascading on from that first mistake, we made several
-mistakes with how we framed   our research questions. This
-draft fixes those errors. This has the added benefit
-of clarifying our discussion
-along the way.
-\ei
-Apart from these two points we have also addressed
+presence of the problem studied here.}
+
+\response{Next, using reviewer feedback, we can now better frame
+our  research questions (this has the added benefit
+of clarifying our discussion).}
+ 
+ 
+\response{Apart from these two points, we have also addressed
 the many helpful and detailed comments from the reviewers:
 \be
 \item The problem statement has been  clarified and properly positioned (R1, R3).
-\item The novelty of the approach has  been clarified (R3). (see \bareresp{3-1})
-\item Using comments from  (R1, R2, R3), we have made numerous small editorial improvements.
+\item The novelty of the approach has  been clarified (R3). (see our comments to Reviewer3, in \bareresp{3-1},
+below)
 \item The study now includes all the details to ensure 
 replicability   (R1, R2).
-\item The results of the study need to be revisited since the reviewers are not convinced that the results support the claims in the paper (R1, R2, R3).
-\item The background on transfer learning has been augmented with more  citations (R2).
+\item The results of the study were   be revisited and clarified. 
+\item The background on transfer learning has been augmented, with more  citations (R2).
+\item Using comments from  (R1, R2, R3), we have made numerous small editorial improvements.
 \ee
 }
 
@@ -46,7 +46,7 @@ As we said to the associated editor, the previous draft made the following mista
 \item We assumed that the  core motivation for this work
 was widely known and accepted in the community. That was a mistake. 
 \item
-Consequently,this draft completely rewrites the Introduction
+Consequently, this draft completely rewrites the Introduction
 to include much more background information on the 
 presence of the problem studied here.
 \ei
@@ -54,10 +54,13 @@ We have made some additional corrections, clarifications, and revisions, as dire
 
 \review{(1.1a) Background. The paper builds upon a number of previous studies. However, several key questions have no answer: *What is* the bellwether? *Why is* this relevant? How does it work when applied to different contexts? Why is this useful in practice?}
 
-\response{(1.1b)You are quite correct, we did not define bellwether till very late in the prior draft. In this draft, we define bellwether on page 1\citeresp{1-1a}}
+\response{You are quite correct, we did not define bellwether till very late in the prior draft. In this draft, we define bellwether on page 1\citeresp{1-1a}} where we say:
 
 \begin{quote}
-    \response{``bellwether'' is a project from a community of N projects, whose data yields the best analytic (i.e. defect prediction, effort estimation etc) on all others. (the bellwether is the  leading sheep of a flock, with a bell on its neck)}
+    \response{Given a community of projects developed by the same organization,
+the ``bellwether'' is a project or a handful of projects
+whose data yields the best analytic (i.e. defect prediction, effort estimation, etc) on all others}\footnote{We call that the ``bellwether'' since that is the
+name of the  leading sheep of a flock, with a bell on its neck.}
 \end{quote}
 
 \review{The paper mentions that: "The core intuition of this new approach is that if many projects are similar, then we do not need to run comparisons between all pairs of projects": very good, but where this intuition come from?}
@@ -82,16 +85,15 @@ exist, then we   exploit symmetries between different projects in order to learn
 \review{(1.2)The relevance of the paper. This is, unfortunately, unclear. According to the abstract and introduction, the main issue treated in the paper is related to scalability. Please, provide a clear case study on the performance of bellwether methods. The claims on the scalability of the approaches are just claims, no details are reported. Abstract and introduction just report that "when applied to the 697 projects studied here, they took 60 days of CPU to find and certify the bellwether". As said, the bellwether approach has been applied to several problems (e.g., defect prediction/effort estimation/bad smell detection): are these problems the same? When is it needed to apply scalable solutions for bellwether approaches? Why? Please, explain.}
 
 \response{Thank you for your comments.
- On review, we found that core problem of conclusion instability
-was not well documented in the introduction. This new draft fixes that problem with a completely new
-introduction that better focuses the work on conclusion instability and scalability.}
+ On review, we found that the core problem of conclusion instability
+was not well documented in the introduction. This new draft fixes that problem with an extensively revised introduction~\citeresp{1-2} that better focuses the work on conclusion instability and scalability.}
 
 % {need a new RQ0: how slow is standard bellwether. theoretically an empirically its slow (chart on p2. move to RQ0). May need to include results using increasing community size.XXX including an comparison study with varying size of community to start with. Still need to write this}
 
 \review{(1.3a) Writing style. The introduction is, simply, to be completely rewritten} 
 
 \response{Thank you for your comment. We agree.   Much of the new
-text on page1 takes care to document {\em why }
+text on page1 ~\citeresp{1-3a} takes care to document {\em why }
 we are exploring conclusion instability before
 moving on the {\em how} we do that exploration.}
 
@@ -102,17 +104,17 @@ moving on the {\em how} we do that exploration.}
 
 \review{(1.4) Please, avoid claims such as "have tremendous practical significance" without providing any practical significant example/citation. (This is just an example)}
 
-\response{ Thank you for your comment, You are right.In this manuscript we have deleted the  superlatives (including that one)}
+\response{ Thank you for your comment, You are right. In this manuscript, we have deleted the  superlatives (including that one)}
 
 
 \review{(1.5a) The clarity and replicability of the paper are unclear. Here some examples 1) "The logistic regression learner (since it is relatively fast)". What does "fast" mean? How was "fast" computed? }
 
-\response{ Thank you for your comment, you are quite right. We had not properly mentioned the reason behind choosing logistics regression.  In this draft we have added the reasons to \citeresp{1-5a}:}
+\response{ Thank you for your comment, you are quite right. We had not properly mentioned the reason behind choosing logistics regression.  In this draft, we have added the reasons to \citeresp{1-5a}:}
 
 \begin{quote}
 \response{
-"The logistic regression learner,  since it is widely used in defect prediction~\cite{ghotra2015revisiting} in   the  software engineering domain and, in our experience,
-in runs much faster (in terms of model building time) than many other learners such as Support Vector Machine, Random Forest, Artificial Neural Nets etc. (when tested on defect prediction).}
+"The logistic regression learner,  since it is widely used in defect prediction~\cite{ghotra2015revisiting,zhang2017data,he2012investigation,nam2013transfer,pan2010domain} in   the  software engineering domain and, in our experience,
+it runs much faster (in terms of model building time) than many other learners such as Support Vector Machine, Random Forest, Artificial Neural Nets etc, (when tested on defect prediction).}
 \end{quote}
 
 
@@ -121,27 +123,27 @@ in runs much faster (in terms of model building time) than many other learners s
 \review{(1.5b) "The SMOTE class imbalance correction algorithm [49], which we run on the training data2". Why is SMOTE needed? Why is the problem unbalanced? Please, explain.
 }
 
-\response{You are right, we had not included the reason for using SMOTE in our algorithm and had not explained why the problem is unbalanced. In this draft we have added notes to answer those questions \citeresp{1-5b}:}
+\response{You are right, we had not included the reason for using SMOTE in our algorithm and had not explained why the problem is unbalanced. In this draft, we have added notes to answer those questions \citeresp{1-5b}:}
 \begin{quote}
-    \response{The SMOTE class imbalance correction algorithm~\cite{Chawla2002}, since many of the projects have relatively very few or large number of defects. A model build on project with such skewed class distribution can result in a biased model towards the majority class (Such models can either have low recall or high recall with high pf). Thus we run SMOTE on the training data to artificially boost the number of target examples in the training data and achieving balanced recall and pf for the minority class test examples}
+    \response{(we used)... The SMOTE class imbalance correction algorithm~\cite{Chawla2002} since many of the projects have relatively very few or a large number of defects. A model built on a project with such skewed class distribution can result in a biased model towards the majority class (Such models can either have a low recall or a high recall with high pf). Thus we run SMOTE on the training data to artificially boost the number of target examples in the training data and achieving balanced recall and pf for the minority class test examples}
 \end{quote}
 
 
 \review{(1.5c) "and Hall’s CFS feature selector". Which features have been removed and why?
 }
 
-\response{You are quite correct, we did not included the details about how the features are being removed and why in the last draft. In this draft we have included notes regarding how CFS works and why the features that are not used are removed \citeresp{1-5b}:}
+\response{You are quite correct, we did not include the details about how the features are being removed and why in the last draft. In this draft, we have included notes regarding how CFS works and why the features that are not used are removed \citeresp{1-5b}:}
 
 \begin{quote}
-    \response{Hall's CFS feature selector~\cite{hall1999correlation} is used to identify features which are highly correlated with the classification, yet uncorrelated to each other. The features which are  highly correlated with each other will not add more information while making classification, while the features which are uncorrelated towards the classification also not add more information while making classification. The CFS algorithm incrementally picks one feature at a time which adds the most information towards the classification at a given step and stops when there is no more improvement in the score.}
+    \response{Hall's CFS feature selector~\cite{hall1999correlation} is used to identify features which are highly correlated with the classification, yet uncorrelated to each other. The features which are  highly correlated with each other will not add more information while making classification, while the features which are uncorrelated towards the classification also not add more information while making classification. The CFS algorithm incrementally picks one feature at a time which add the most information towards the classification at a given step and stops when there is no more improvement in the score.}
 \end{quote}
 
-\response{As to what attributes were selected, please see Figure~\ref{fig:FSS_compare}. As to what of
-the selected figures were most important, please see Table~\ref{tbl:coefs}.}
+\response{As to what attributes were selected, please see Figure~\ref{fig:FSS_level1}. As to what of
+the selected figures were most important, please see Table~\ref{tbl:coefs_4}.} 
 
 \review{(1.5d) "As to CFS, we found that without it, our recalls were very low and we could not identify which metrics mattered the most". Where can the reader understand this statement? Where is the replication data?}
 
-\response{Thank you for your comment, using the replication package (including data) the experiments can be reproduced.\citeresp{1-5d}.  Also, we have added in specific numbers to that sentence:
+\response{Thank you for your comment, using the replication package (including data) the experiments can be reproduced \citeresp{1-5d}.  Also, we have added in specific numbers to that sentence:
 \begin{quote}
 As to CFS, we found that without it, our recalls were very low (less than 20\%).
 \end{quote}
@@ -150,56 +152,64 @@ As to CFS, we found that without it, our recalls were very low (less than 20\%).
 
 \review{(1.5e) "extensive studies have found that CFS more useful than many other feature subset selection methods such as PCA or InfoGain or RELIEF". The paper cites just one paper, how should these studies be "extensive"?}
 
-\response{Thank you for that comment.  You are quite correct-- we did not document the all the necessary citations for supporting our claim before. We have added the following note to \citeresp{1-5e}}
+\response{Thank you for that comment.  You are quite correct-- we did not document all the necessary citations for supporting our claim before. We have added the following note to \citeresp{1-5e}}
+
+\begin{quote}
+    {\color{blue}Also,   extensive studies have found that CFS more useful than many other feature subset selection methods such as  PCA or InfoGain or RELIEF\respto{1-5e} ~\cite{hall1999correlation,challagulla2008empirical,arar2015software,lee2016developer,rodriguez2007attribute,gao2015combining,hosni2017investigating}. }
+\end{quote}
 
 \review{(1.5f) "Maximize recall and precision and popt(20)": Why should these metrics be maximized? What is the practical value, e.g., is high recall always needed in practice, or should we prefer precision in the problems treated by the bellwether? What about popt(20)?}
 
-\response{Thank you for your comment, we didn't explained why these metrics need to be maximized, added necessary details\citeresp{1-5f}.}
+\response{Thank you for your comment, we didn't explain why these metrics need to be maximized, For those notes, please see \citeresp{1-5f} and \citeresp{1-5g}.}
 
 
 \review{(1.5g) "While minimizing false alarms and ifa auc": Again, please explain the practical relevance of the performance metrics employed. }
 
-\response{Thank you for your comment, we didn't explained why these metrics need to be minimized, added necessary details\citeresp{1-5f}.}
+\response{Thank you for your comment, we didn't explain why these metrics need to be maximized, For those notes, please see  \citeresp{1-5f} and \citeresp{1-5g}.}
 
 
 \review{(1.5h) 
 More in general, how can one replicate the performed study? Is there a replication package? If so, where?}
 
-\response{Thank you for that comment. You are quite correct-- we did not include in depth steps to replicate the study before. We have added a replication package in contribution section \citeresp{1-5h} as well as more in depth details about the algorithm has been added in figure~\ref{fig:Pseudo-code} and section~\ref{GENERAL}.}
+\response{Thank you for that comment. You are quite correct-- we did not include in-depth steps to replicate the study before. We have added a replication package in contribution section \citeresp{1-5h} as well as more in-depth details about the algorithm has been added in Figure~\ref{fig:Pseudo-code} and section~\ref{GENERAL}.}
 
 \review{(1.6a) The analysis of the results should be substantially improved. Let consider the case of Section 5 - RQ1. The results are reported in less than half column and refer to a figure (Figure 6) which does not explain anything. The summary reports that "Theoretically and empirically, the hierarchical reasoning on GENERAL performs much faster than standard bellwether methods": I cannot understand where these "theoretically and empirically" come from, since there is no proof of them. }
 
-\response{You are quite correct. In the last draft we indeed did not included detailed analysis of the results to show the scalability of our model. In this draft \citeresp{1-2}\citeresp{1-6a} we have included 2 more research questions (RQ1 and RQ2) to show the conventional bellwether is slower than the new bellwether (aka GENERAL) method. We also have updated another research question (RQ3) to compare the methods in-term of number of comparisons and time taken to run the two methods, as can been seen in figure~\ref{fig:compare} and \ref{fig:compare_time}.}
+\response{You are quite correct. In the last draft we indeed did not include a detailed analysis of the results to show the scalability of our model. In this draft \citeresp{1-2}\citeresp{1-6a} we have included 2 more research questions (RQ1 and RQ2) to show the conventional bellwether is slower than the new bellwether (aka GENERAL) method. We also have updated another research question (RQ3) to compare the methods in-term of number of comparisons and time taken to run the two methods, as can been seen in Figures~\ref{fig:compare_time} and
+\ref{fig:compare}.}
 
-\review{(1.6b)
-The same is true for the other research questions. And, in general, there is qualitative analysis: Why are the results the ones reported in the paper?}
+ 
 
-\response{You are right,Thank you for that comments. We have added much  quantitative analysis as
-well as statistical tests to this paper. Please see Figures~\ref{fig:compare_time} and ~\ref{fig:compare}.}
+\review{(1.6b) What makes the reported method scalable?}
 
-\review{(1.6c) What makes the reported method scalable?}
-
-\response{Thank you for your comment, in this version we have updated the RQ3 to show that our method is scalable. We have showcased the analysis of number of comparisons and run time between the two algorithm (conventional bellwether and GENERAL) using various community size.}
+\response{Thank you for your comment, in this version we have updated the RQ3 to show that our method is scalable. We have showcased the analysis of number of comparisons and run time between the two algorithms (conventional bellwether and GENERAL) using various community sizes.}
 
 
 
 \section*{Reviewer 2}
 
 \response{Thank you very much for your detailed review.
-As we said to the associated editor, the previous draft made the following mistake:
-\bi
-\item We assumed that the  core motivation for this work
-was widely known and accepted in the community. That was a mistake. 
+As we said to the associated editor, the prior draft  assumed that the core motivation for this work was widely known and accepted in the community. That was a mistake so this draft completely rewrites the Introduction to include much more background information on the presence of the problem studied here. Also, thanks to your feedback, 
+we have made some additional corrections, clarifications, and revisions, as directed by your comments. Please note that to assist in your review, we refer to specific locations of each of the changes using the notation \respto{2-XX}.}
+
+
+\response{Before going on, we need to ask you one thing.
+\begin{itemize}
 \item
-Consequently,this draft completely rewrites the Introduction
-to include much more background information on the 
-presence of the problem studied here.
-\ei
-We have made some additional corrections, clarifications, and revisions, as directed by your comments. To assist in your review, we refer to specific locations of each of the changes using the notation \respto{1-XX}.}
-
-
-% Many of your comments take issue with two terms used in this paper "lessons learned" and "transfer learning".
-% We agree with you that our use of "lessons learned" was inappropriate and we have removed all those usages.
+Several   of your comments take issue with two terms used in this paper ``lessons learned'' and "transfer learning".
+We agree with you that our use of ``lessons learned" was inappropriate and we have removed all terms from this paper.
+\item
+But as to your argument that our use of ``transfer learning'' is  incorrect, that is not clear to us. 
+As near as we can tell, our use of transfer learning is compatible with standard definitions in that field, both outside
+of SE (e.g. Pan's paper~\cite{pan2009survey})
+and within the SE literature~\cite{ma2012transfer,zimmermann2009cross,turhan2009relative,krishna2018bellwethers,jing2015heterogeneous,he2014towards,nam2017heterogeneous,cheng2016heterogeneous,yu2017feature}.
+Also, reading through your comments, one thing that strikes us is that perhaps you are reserving the use of ``transfer learning''   only  to heterogeneous learning (where the source and target have different attributes)?  If so, then perhaps 
+  \S\ref{tion:how1} is relevant since, in that section, we carefully define and distinguish between homogeneous and heterogeneous transfer learning and clearly state that this paper 
+is about homogeneous learning, where the attributes are the same in source and target.   
+\item
+That said, we want to work with you on this point. Is there another term you would accept that is not ``lessons learned'' or ``transfer learning''?
+Would the terms ``generalize'' or ``extend'' work for you? Please advise.
+\end{itemize}} 
 
 % As to our use of "transfer learning", 
 % inspired by your comments we have clarified what we mean by that term much earlier in the paper (see \cite{XXX}). Base don that clarification, we can show that our use of ``transfer learning'' is consistent with its usage by Pan'09 (a paper current 8,220 citations at the time of this writing)~\cite{pan2009survey}. Also, our usage is consistent with dozens of recent SE research papers on transfer learning~\cite{pan2009survey,kocaguneli2015transfer,jing2015heterogeneous,ma2012transfer,nam2013transfer,jamshidi2017transfer,qing2015cross,cao2015software,tong2016heterogeneous,nam2017heterogeneous,li2018cost,zhang2016cross,jing2015heterogeneous}. Thank you for encouraging us to clarify that terminology.
@@ -225,10 +235,12 @@ We have made some additional corrections, clarifications, and revisions, as dire
 \response{ Thank you for your comment, in the last draft we did not accurately explain what bellwether is. In this draft we have included the definition of bellwether \citeresp{1-1a}\citeresp{2-2}:}
 
 \begin{quote}
-    \response{``bellwether'' is a project from a community of N projects, whose data yields the best analytic (i.e. defect prediction, effort estimation etc) on all others.} 
+    \response{(a) `Given a community of projects developed by the same organization,
+the ``bellwether'' is a project or  a handful of projects
+whose data yields the best analytic (i.e. defect prediction, effort estimation, etc) on all others.} 
 \end{quote}
 \begin{quote}
-    \response{Also, to answer your second question, ``…the bellwether is equivalent to the other models'' has been replaced with ``....since the bellwether is an exemplar projects for the community of N projects seen so far...''  }
+    \response{Also, to answer your second question, ``…the bellwether is equivalent to the other models'' means ``bellwether is an exemplar project for the community of N projects seen so far''  }
 \end{quote}
 
 \review{(2.3) [Sec. 1] “when new projects appear, their quality can be evaluated even before there is an extensive experience base within that particular project (again, just by studying the bellwether).” }
@@ -239,7 +251,7 @@ We have made some additional corrections, clarifications, and revisions, as dire
 
 \review{(2.4) If the point is to use the bellwether to infer things about a “new” project, then how new can the new project be? When (in the new project’s history) can you be sure the model from the bellwether is valid to use?}
 
-\response{Thank you for your comment. To answer the first question, the projects can be completely new projects, without any historical data collected for reference. To answer the second question, in this research the experiments has been designed to simulate a situation, where there are known projects in a large community as well as a set of new projects which are not part of the community. We do this by dividing the 697 projects into two sets 1) {\em Train 1}: a community 627 projects, from which we will select a bellwether and 2) {\em Train 2}: a set of 70 new projects, which will be tested using bellwether.}
+\response{Thank you for your comment. To answer the first question, the projects can be completely new projects, without any historical data collected for reference. To answer the second question, in this research the experiments have been designed to simulate a situation, where there are known projects in a large community as well as a set of new projects which are not part of the community. We do this by dividing the 697 projects into two sets 1) {\em Train 1}: a community 627 projects, from which we will select a bellwether and 2) {\em Train 2}: a set of 70 new projects, which will be tested using bellwether.}
 
 % \response{Explain the train, test splits and the how you do the exp. then say this is what our model proves, it predicts for projects which it has not seen before XX.}
 
@@ -247,12 +259,12 @@ We have made some additional corrections, clarifications, and revisions, as dire
 
 \response{Thank you for your comment. 
 As you point out, the prior draft
-was too value on this point.
+was too vague on this point.
 This paper now focuses on defect prediction (see the new title).}
 
 \response{ But to answer
 your question (about whether
-or not the the bellwether changes
+or not the bellwether changes
 per goal), it is possible that another
 task will require another bellwether.
 Accordingly,
@@ -261,23 +273,23 @@ bellwether method is fast. Hence this paper.}
 
 \review{(2.6) Figure 1 needs to be omitted}
 
-\response{You are correct. Deleted. }
+\response{You are correct. We have deleted Figure 1 from this manuscript. }
 
 \review{(2.7) The computational complexity $(O(N^2)$ versus $O(m*(N/m^2))$ is both compact appropriate.}
 
 \response{In practice, the difference
 between the runtimes associated with these two  approaches is a 
 very large difference (as witnessed
-by P  Figures~\ref{fig:compare_time} and ~\ref{fig:compare}.) }
+by  Figures~\ref{fig:compare_time} and ~\ref{fig:compare}.) }
 
 \review{(2.8) The paper does not evaluate the model’s performance using a pool of 12,000 projects; the evaluation does not even use 1,000 projects.}
 
-\response{All our current numbers now say 697.}
+\response{Yes, are correct. That was our mistake. All our current numbers now say 697.}
 
 
 \review{(2.9) [Sec. 1] The box under RQ4 is very confusing. We find the bellwether to simply study one project, but this note says we still need to analyze hundreds of projects to understand something like the importance of features. Is this right?}
 
-\response{You are correct. We have reworded the wording of the box under RQ4, which was confusing. We have simpler text now \citeresp{2-9}.}
+\response{You are correct-- that text was confusing. In this reworked version, that text is removed. .}
 
 % \review{(2.10a) [Sec. 1] The contributions of this paper.
 % 1) The first contribution claims “bellwethers for transfer learner.” Indeed, the paper repeatedly refers to transfer learning. But I do not see where the transfer learning is actually being done when I inspect the procedure at the beginning of Sec. 3:}
@@ -303,7 +315,7 @@ by P  Figures~\ref{fig:compare_time} and ~\ref{fig:compare}.) }
 \review{(2.10) I do not understand what the second contribution really is.}
 
 \response{
-Thank you for that comment. We deleted it.}
+Thank you for that comment. We have deleted it.}
  
 %  \response{
 % Note that with that new introduction (that focuses more on {\em why}, then this paper is not  better at contextualizing
@@ -342,10 +354,10 @@ of project.}
 
 \review{(2.18) [Sec. 3.2] “…for large sample datasets…” What is the size of the design matrix? Does 21 product metrics and five process metrics mean 26 columns? If there are 697 projects and snapshots every six months, then how many rows are there?}
 
-\response{Thank you for your comment, the previous manuscript did not included all the details regarding the design matrix. In this manuscript we have included much details regarding the design matrix in \citeresp{2-18}. \fig{meta} shows the distribution of number of rows in each projects, which is a snapshots of the projects from 6 months back of the last commit. We can see from the \fig{meta} median number of rows is around 120 in this group of 697 projects explored.}
+\response{Thank you for your comment, the previous manuscript did not included all the details regarding the design matrix. In this manuscript we have included much details regarding the design matrix in \citeresp{2-18}. \fig{meta} shows the distribution of number of rows in each projects, which is a snapshots of the projects from 6 months back of the last commit. We can see from the \fig{meta} median number of rows is around 120 in this group of 697 projects explored. We have also added following notes to~\citeresp{2-18} to explain the metrics collected:}
 
 \begin{quote}
-    \response{Using the   Understand tool~\cite{visualize},
+    \response{...using the   Understand tool~\cite{visualize},
 we calculated different variations (i.e. average, max etc.) of 21 product and 5 process metrics, with a total 66 attributes/columns to build defect prediction models
  (see Table~\ref{tbl:metric}).
 These product  metrics are calculated from snapshots of the projects from 6 months back of the last commit. The process metrics are computed using the change history in the six-months period before the split date via manual collection of data using scripts.}
@@ -396,24 +408,15 @@ This is a special problem that arises when combining old data  with new data.}
 
 \review{(2.26) [Sec. 5] Why do you need a figure (Fig. 6) for two numbers?}
 
-\response{Thank you for your comment, the figure Fig. 6 (now Fig~\ref{fig:time}) is important as this figure shows the difference of time taken for each method. XXXXXXX include with updated charts.XXXXXXX}
+\response{Thank you for your comment, the Figure Figure 6 has been removed from this version. We have included Figure~\ref{fig:compare_time} which shows the time taken by traditional bellwether and GENERAL (without CFS and SMOTE) with increasing project community size. these two figures are important to showcase the scalability of the new bellwether method aka GENERAL.}
 
 
 \section*{Reviewer 3}
 
-\response{Thank you very much for your detailed review.
-As we said to the associated editor, the previous draft made the following mistake:
-\bi
-\item We assumed that the  core motivation for this work
-was widely known and accepted in the community. That was a mistake. 
-\item
-Consequently,this draft completely rewrites the Introduction
-to include much more background information on the 
-presence of the problem studied here.
-\ei
-We have made some additional corrections, clarifications, and revisions, as directed by your comments. To assist in your review, we refer to specific locations of each of the changes using \respto{1-XX}.}
+\response{Thank you very much for your detailed review. As we said to the associated editor, the prior draft  assumed that the core motivation for this work was widely known and accepted in the community. That was a mistake so this draft completely rewrites the Introduction to include much more background information on the presence of the problem studied here. Also, thanks to your feedback, 
+we have made some additional corrections, clarifications, and revisions, as directed by your comments. Please note that to assist in your review, we refer to specific locations of each of the changes using the notation \respto{3-XX}.}
 
-\review{(3.1)The manuscript introduces a new approach GENERAL, which just applies hierarchical clustering. As far as I understand, hierarchical clustering is a well-known, standard, and largely-evaluated clustering algorithm. I don’t really see the need to rebrand it with a new name. What is the difference between GENERAL and hierarchical clustering other than the GENERAL is applied to defect prediction?}
+\review{(3.1)The manuscript introduces a new approach GENERAL, which just applies hierarchical clustering. As far as I understand, hierarchical clustering is a well-known, standard, and largely-evaluated clustering algorithm. I don’t really see the need to re brand it with a new name. What is the difference between GENERAL and hierarchical clustering other than the GENERAL is applied to defect prediction?}
 
 \response{Thank you for your comment. We have added detailed notes on how GENERAL and each of its component works. To clarify, GENERAL
 does several things, only one of which is a standard
@@ -428,11 +431,28 @@ different models from sibling trees using a multi-objective domination predicate
 
 \review{(3.3) I am also very concerned about the (unproven) assumption that we can make conclusions that hold across multiple projects. While the dataset includes 700 projects, we have no information about the project, the domain applications, critically (e.g., safety-critical systems vs. generic open-source Java libraries). I don’t really see how a model trained on dozens of open-source apache libraries can be applied to robotics, medical systems, etc. Note that for the latter domains, testing, requirements engineering, and maintenance are different and have peculiar standards (e.g., MC/CD coverage for automotive systems vs. statement coverage for non-critical systems).  }
 
-\response{With respect, we are unclear on this comment. As shown by our precision, recall, false alarm, etc results what this paper
-shows is that we can make general conclusions across this space of projects. And, elsewhere, bellwethers have worked to generate
-configurations for cloud-based tools~\cite{krishna2019whence},
-effort estimation, predicting Github issue close time, and
-code bad smell detection~\cite{krishna2018bellwethers,krishna2017simpler, nair19a, krishna16, krishna16a}. So we would characterize bellwethers as method that has been demonstrated useful in many domains. However, and this is the point of this paper, the existing  method does not scale to large data sets. Hence, this paper.}
+\response{We are not very clear on this comment.
+In our view,   bellwethers are a method that has been demonstrated useful in many domains. 
+As shown by our precision, recall, false alarm, etc results, this paper
+shows that we can make general conclusions across this space of projects.}
+
+\response{Also, in other papers\cite{krishna2018bellwethers,krishna2017simpler, nair19a, krishna16, krishna16a}, we have shown that
+ bellwethers have worked to generate:
+\begin{itemize}
+\item
+configurations for cloud-based tools~\cite{krishna2019whence}
+(this recently got accepted to TSE);
+\item 
+effort estimation;
+\item
+predicting Github issue close time, 
+\item
+code bad smell detection.
+\end{itemize}
+}
+
+\response{
+However, and this is the point of this paper, the existing  method does not scale to large data sets. Hence, this paper.}
 
 \review{(3.4) Similar to Figure 1, Figure 2 discussed hypothetical results/comparisons. Why do we need to speculate on hypothetical data rather than real data? The last two paragraphs in Section 2.2 make little sense to me. There is no reason to have them, if not for contributing to the overall overselling.}
 
@@ -462,7 +482,8 @@ is now focused on defect prediction (see our new title). }
 
 \review{(3.9) Furthermore, the dataset looks quite strange to me. Looking at the defect distributions (left-most boxplot in Figure 4), I do see that 75\% of the projects (the last quartile) have more than 60\% of defective modules (classes/methods?). Some have a defective percentage above 80\%. Do we need machine learning to predict defects in projects where almost all modules are defectives? In these projects, a simple, constant classifier would work the best. The results also show this for ZeroR in Section 5.}
 
-\response{unclear on this. zeroR tells us that it is not enough to do simple things. Not sure how to answer.XXXX}
+\response{Thank you for your comment. In this study, ZeroR is a method where we predict everything as majority class. This effectively means for any project where in the training data majority of the modules are defective, all test data will be predicted as defective (increasing pf and lower precision) and vice-versa if majority of the modules are non-defective. The dataset we are working with more then 50\% of the projects has less than 50\% defective modules. So ZeroR will detect no defects in all these projects (Figure~\ref{fig:Statistical} show the median recall is zero precisely for this reason). This is the reason we can't use ZeroR as a recommended model.
+We have added notes on that in \S\ref{sec:isk} and \citeresp{3-9}.}
 
 
 \review{(3.10) Throughout the manuscript, the complexity of GENERAL is suggested to be $O(m * (N/m)^2)$. But there is proof about the complexity whatsoever. Either the manuscript cites proofs from existing papers (e.g., related work on hierarchical clustering) or provides a complete proof (perhaps in an appendix).}
@@ -471,18 +492,18 @@ is now focused on defect prediction (see our new title). }
 
 \review{(3.11a) All the results are summarized in one single table (Figure 7), which shows the mean and the standard deviation of five evaluation metrics, as well as the rank of the statistical tests. There are two problems in aggregating the data in this way: (1)I am not sure that the arithmetic mean and the standard deviation are the appropriate metrics to use. Are the data normally distributed? Do we have many outliers? Perhaps, median and IQR are more appropriate as they are less affected by outliers.}
 
-\response{Thank you for your comment, you are quite correct. We used arithmetic mean and standard deviation as our metrics to showcase our result in the last manuscript, which may be affected by outliers and skew the results. In this manuscript, we have replaced arithmetic mean and standard deviation with median and IQR in figure~\ref{fig:Statistical}.}
+\response{Thank you for your comment, you are quite correct. We used arithmetic mean and standard deviation as our metrics to showcase our result in the last manuscript, which may be affected by outliers and skew the results. In this manuscript, we have replaced arithmetic mean and standard deviation with median and IQR in Figure~\ref{fig:Statistical}.}
 
 \review{(3.11b)Maybe, the boxplots would be the most appropriate way to show the distributions. (2)The average across 700 projects makes little sense and hides what happens in each project. What happens per project? In how many projects does GENERAL performs better than the standard bellwether learner?}
 
-\response{Thank you for your comments. The Fig~\ref{fig:Statistical} is a form of boxplot, where the black dot represents the median and the spread of the black line represents the 25th and 75th percentile of the data. Also note that the ranks we offer in that figure (in the left-hand-column) are generated via non-parametric statistics
-(bootstrap and the A12 effect size test) that do not assume gaususians.}
+\response{Thank you for your comments. The Fig~\ref{fig:Statistical} is a form of box-plot, where the black dot represents the median and the spread of the black line represents the 25th and 75th percentile of the data. Also note that the ranks we offer in that figure (in the left-hand-column) are generated via non-parametric statistics
+(bootstrap and the A12 effect size test) that do not assume Gaussian.}
 
 \review{(3.12) Section 5 contains the following recommendation “As to ZeroR, we cannot recommend that approach. While ZeroR makes few mistakes (low ifas and low pfs), it scores badly on other measures (very low recalls and popt(20).” This argument does not convince me as ZeroR gets the best results for two metrics (as far as I understand). Please elaborate more on why we cannot use ZeroR. Besides, ZeroR may work relatively well because of projects with a very large number of defects. Perhaps, some in-depth analysis of the correlation between defect distributions and performances of the models would be very useful.}
 
-\response{Thank you for your comments, in the last manuscript we did not properly explained why the model ZeroR can not be recommend. We have updated the figure~\ref{fig:Statistical} to replace arithmetic mean and standard deviation with median and IQR. We can see from the figure~\ref{fig:Statistical}, the ZeroR model has a recall and pf of zero with IQR diff between 75th and 25th percentile as 100, which signifies as the model either predicts everything as defective or non-defective it will not be able to predict any defective module at all if the defect ratio is less than 50\%, while for projects with defect ratio is more than 50\% it will predict everything as defective with high false positive.}
+\response{Thank you for your comments, in the last manuscript we did not properly explained why the model ZeroR can not be recommend. We have updated the Figure~\ref{fig:Statistical} to replace arithmetic mean and standard deviation with median and IQR. Figure~\ref{fig:Statistical} shows ZeroR model has a median recall and pf of zero with IQR diff between 75th and 25th percentile as 100. This result signifies the model either predicts everything as defective or non-defective. This is because ZeroR is a method where we predict everything as majority class. This effectively means for any project where in the training data majority of the modules are defective, all test data will be predicted as defective (increasing pf and lower precision) and vice-versa if majority of the modules are non-defective. In the dataset that we have used more then 50\% of the projects has less than 50\% defective modules, thus in result the median recall, precision and pf is zero.}
 
 \review{(3.13) Section 5 (RQ3) ends with two recommendations about critical and non-critical systems. However, I could not find any analysis that can support these recommendations. I also queried the paper looking for the keywords “critical systems,” but I could not find anything except the recommendation with these keywords. To address this, there are only two mutually exclusive solutions: either remove the recommendations or add in-depth analysis that can provide empirical evidence to the claims.}
 
 
-\response{Thank you for your valuable comments, the text for section~\ref{sec:rq6} was indeed confusing, we have made appropriate changes to better explain our analysis of a general defect prediction model learned by analyzing 627 projects. We have also removed any ambiguous keyword which might not be appropriate in this context. The changes has been added in \citeresp{3-13}.}
+\response{Thank you for your valuable comments, the text for section~\ref{sec:rq6} was indeed confusing. We have removed that confusing terminology.}
